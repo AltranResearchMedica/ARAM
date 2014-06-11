@@ -67,7 +67,7 @@ Tested with Microsoft Visual C++ (Express Edition 2010) and gcc 4.6.3
 
 To test the library, a video sample is provided with its camera calibration parameters (record.avi, camera_data.xml).
 
-A test video is also available : https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/multiTracking.avi
+A test video is also available : https://github.com/AltranResearchMedica/ARAM/raw/master/samples/capture/multiTracking.avi
 
 ## FirstApp
 
