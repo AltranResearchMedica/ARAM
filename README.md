@@ -37,6 +37,11 @@ The library main classes are divided as following:
 - aram::Chessboard : currently best ICoordinate implementation
 
 
+
+Doxygen documentation :
+http://altranresearchmedica.github.io/ARAM/
+
+
 # Compile
 
 ## Requirements
@@ -90,5 +95,5 @@ This work is contributed by Alexandre KORNMANN in the framework of his final pro
 -------------------------------------------------------------------
 # Contact
 
-Please report any bugs, comment about error and/or suggest enhancements to Abdelkrim BELHAOUA <support-medica@altran.com>
+Please report any bugs, comments about error and/or suggest enhancements to Abdelkrim BELHAOUA <support-medica@altran.com>
 
