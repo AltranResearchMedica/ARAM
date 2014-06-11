@@ -8,6 +8,9 @@ ARAM is a C++ library for Augmented Reality on Medical Applications based on the
 The library deals with the identification of markers in the presence of occlusions without sacrificing the accuracy of the pose camera estimation. These markers are generated using Hamming Code including error correction.
 In order to assess the accuracy of camera pose estimation, specifically when high levels of accuracy are required on medical field, it is mandatory to carry out a thorough analysis of the errors occurring in the whole process. Consequently, this library deals with the performance analysis of the 3D pose estimation. The suggested analysis focuses on the error estimation affecting the edge detection process.
 
+![Mono tracking example](https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/AR_0.png)
+![Mono tracking example](https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/AR_1.png)
+
 
 # Description
 
@@ -21,7 +24,6 @@ The processing steps of AR marker detection procedure can be summarized as follo
 -	Image Sampling
 -	Pose estimation using the calibration parameters.
 
-
 # Main class
 
 The library main classes are divided as following:
@@ -34,7 +36,10 @@ The library main classes are divided as following:
 - aram::Intrinscis : store camera intrinsics parameters
 - aram::Extrinsics : compute extrinsics parameters
 - aram::ICoordinate : compute extrinsics parameters, using multi tracking method
-- aram::Chessboard : currently best ICoordinate implementation
+- aram::Chessboard : currently best ICoordinate implementation, to deal with multi tracking
+
+![Multi tracking example](https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/multiTracking_1.png)
+![Multi tracking example](https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/multiTracking_0.png)
 
 
 
@@ -61,6 +66,8 @@ Tested with Microsoft Visual C++ (Express Edition 2010) and gcc 4.6.3
 # Samples
 
 To test the library, a video sample is provided with its camera calibration parameters (record.avi, camera_data.xml).
+
+A test video is also available : https://github.com/AltranResearchMedica/ARAM/blob/master/samples/capture/out.avi
 
 ## FirstApp
 
