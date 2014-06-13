@@ -88,6 +88,19 @@ namespace aram
 		*/
 		bool exist(std::string);
 		
+		
+		/**
+		* begin of map set
+		* \return std::map<std::string,cv::Mat>::iterator begin
+		*/
+		iteratorFrameSet begin();
+		
+		
+		/**
+		* end of map set
+		* \return std::map<std::string,cv::Mat>::iterator end
+		*/
+		iteratorFrameSet end();
 
 	private :
 		std::map<std::string,cv::Mat> _frameMap; /**< map to store (name,frame) */

@@ -2,19 +2,26 @@
 
 namespace aram
 {
-        Exporter::Exporter():_count(0)
+    Exporter::Exporter():m_count(0),m_target("")
+	{
+	}
+
+	Exporter::Exporter(std::string target):m_count(0),m_target(target)
 	{
 	}
 
 	Exporter& Exporter::operator++()
 	{
-		_count++;
+		m_count++;
 		return *this;
 	}
 	
 	void Exporter::write(const std::string &text, const std::string &file)
 	{
-	  std::ofstream f(file.c_str(),std::ios_base::out|std::ios_base::app);
+		std::stringstream ss;
+		ss << m_target << "/" << m_count << "_" << file;
+
+		std::ofstream f(ss.str().c_str(),std::ios_base::out|std::ios_base::app);
 		f << text << std::endl;
 		f.close();
 		
@@ -64,11 +71,9 @@ namespace aram
 	void Exporter::frame(cv::Mat &frame, const std::string &file)
 	{			
 		std::stringstream ss;
-		ss << _count;
-
-		std::string path = file + ss.str() + ".png";
+		ss << file << "_" << m_count << ".png";
 			
-		cv::imwrite(path,frame);
+		cv::imwrite(ss.str(),frame);
 
 		return;
 	}

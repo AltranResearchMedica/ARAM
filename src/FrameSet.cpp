@@ -29,4 +29,14 @@ namespace aram
 
 		return;
 	}
+	
+	std::map<std::string,cv::Mat>::iterator FrameSet::begin()
+	{
+		return _frameMap.begin();
+	}
+		
+	std::map<std::string,cv::Mat>::iterator FrameSet::end()
+	{
+		return _frameMap.end();
+	}
 };

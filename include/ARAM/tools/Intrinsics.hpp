@@ -104,6 +104,9 @@ namespace aram
 		*/
 		bool valid();
 
+		
+		void argConvGLcpara2( double cparam[3][4], int width, int height, double gnear, double gfar, double m[16], bool invert);
+		void glGetProjectionMatrix( cv::Size orgImgSize, cv::Size size,double proj_matrix[16],double gnear,double gfar,bool invert);
 
 	private :
 		cv::Mat _cameraMatrix; /**< camera matrix coefficients */ 

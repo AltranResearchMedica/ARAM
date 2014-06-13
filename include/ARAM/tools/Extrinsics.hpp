@@ -103,6 +103,14 @@ namespace aram
 
 
 		/**
+		* Compute reprojection error
+		*
+		* \return float reprojection error
+		*/
+		float error();
+
+
+		/**
 		* Get rotation matrix
 		*
 		* \return const cv::Mat & rotation matrix (3x3)
@@ -153,6 +161,7 @@ namespace aram
 		*/
 		vecPoint2D imgPoints();
 
+		void glGetModelViewMatrix(double modelview_matrix[16]);
 	private :
 		cv::Mat _rmat; /**< rotation matrix (3x3)*/
 		cv::Mat _rvec; /**< rotation vector (3x1)*/

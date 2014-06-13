@@ -57,6 +57,7 @@ namespace aram
 	class ROI;
 	class IROIDetector;
 	class EdgeDetector;
+	class LineFitting;
 	
 	//Tags
 	class ITag;
@@ -72,8 +73,15 @@ namespace aram
 	class Exporter;
 	class Extrinsics;
 	class Grid;
-	class Intrinscis;
+	class Intrinsics;
 
+
+	/**
+	* Line (u0,v0,x0,y0)
+	* u0,v0 -> unitary vector
+	* x0,y0 -> origin point
+	*/
+	typedef cv::Vec4f Line;
 
 	/**
 	* Points in 3D space (world or object coordinates)
@@ -135,6 +143,10 @@ namespace aram
 	*/
 	typedef vecROI::iterator iteratorROI;
 
+	/**
+	* Iterator on std::map<std::string,cv::Mat>
+	*/
+	typedef std::map<std::string,cv::Mat>::iterator iteratorFrameSet;
 
 };
 

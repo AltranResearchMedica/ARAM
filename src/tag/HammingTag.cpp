@@ -22,24 +22,28 @@ namespace aram
 		cv::Mat pers = cv::getPerspectiveTransform(src, dst);
 
 		cv::Mat currentFrame, grayscale, binary;
+
+		if(!fs->exist("tresh"))
+		{
+			int blockSize = (int) (cv::norm(src[0]-src[1])/(double)_tagSize);
+			if(blockSize<3) blockSize = 3;
+			if(blockSize%2==0) blockSize++;
+
+			currentFrame = fs->load("currentFrame");
+			cv::cvtColor(currentFrame, grayscale,CV_BGR2GRAY);
+			cv::adaptiveThreshold(grayscale,binary,255.0,cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, blockSize+2, 0.5);
+
+			fs->save("thresh",binary);
+		}
+		else
+		{
+			binary = fs->load("thresh");
+		}
 		
-		currentFrame = fs->load("currentFrame");
-
-		int blockSize = (int) (cv::norm(src[0]-src[1])/(double)_tagSize);
-		if(blockSize<3) blockSize = 3;
-		if(blockSize%2==0) blockSize++;
-
-		cv::cvtColor(currentFrame, grayscale,CV_BGR2GRAY);
-		
-		//cv::threshold(grayscale, binary, 0.0, 255.0, cv::THRESH_BINARY_INV|cv::THRESH_OTSU);
-
-		cv::adaptiveThreshold(grayscale,binary,255.0,cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, blockSize+2, 0.5);
-
-		fs->save("thresh",binary);
-
 		cv::Size size(_tagSize*_scale,_tagSize*_scale);
 		cv::warpPerspective(binary, out, pers, size, cv::INTER_NEAREST);
 		
+
 		cv::Mat bits = cv::Mat::ones(_tagSize,_tagSize,CV_8UC1);
 
 		//compute matrix of 0/1
@@ -75,7 +79,6 @@ namespace aram
 		ITag::rotate(nrot-1);
 	
 		_id = res;
-		
 
 		if(res==-1) return false;
 		else return true;

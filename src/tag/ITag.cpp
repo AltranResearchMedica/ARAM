@@ -17,4 +17,10 @@ namespace aram
 		std::rotate(_corners.begin(),_corners.begin()+n,_corners.end());
 		return;
 	}
+	
+	void ITag::corners(vecPoint2D c)
+	{
+		_corners = c;
+		return;
+	}
 };

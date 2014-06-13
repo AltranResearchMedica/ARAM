@@ -74,7 +74,6 @@ namespace aram
 			iteratorTag itTag;
 			iteratorROI itRoi;
 
-
 			for(itRoi=_rois.begin();itRoi!=_rois.end();++itRoi)
 			{
 				delete *itRoi;
@@ -87,33 +86,27 @@ namespace aram
 			}
 			_tags.clear();
 
-			_fs->reset();
 		}
 
 		/**
 		* Main method, take an image and return a list of tag found in this image
 		*
-		* \param[in] cv::Mat & input image 
+		* \param[in] cv::Mat & input image
 		* \return std::vector<TagType> a list of tag found in cv::Mat, can be empty 
 		*/
 		void detect(const cv::Mat &frame)
 		{
-			reset();
-			
-			float freq = (float) cv::getTickFrequency()/1000.0f;
-			
-			int64 globaltimer, tagstimer, roistimer;
+			cv::Mat copy = frame.clone();
 
-			globaltimer = cv::getTickCount();
-			// current frame copy
-			_fs->save("currentFrame",frame);
+			reset();
+			_fs->reset();
 			
-			roistimer = cv::getTickCount();
+			// current frame copy
+			_fs->save("currentFrame",copy);
+
 			// ROI detection
 			_r.findROI(&_rois,&_tags,_fs);
-			e.timer((float) ((cv::getTickCount()-roistimer)/freq), "rois");
 			
-			tagstimer = cv::getTickCount();
 			// Tag computing
 			iteratorROI it;
 			for(it=_rois.begin();it!=_rois.end();++it)
@@ -126,9 +119,6 @@ namespace aram
 					delete t;
 				}
 			}
-
-			e.timer((float) ((cv::getTickCount()-tagstimer)/freq), "tags");
-			e.timer((float) ((cv::getTickCount()-globaltimer)/freq), "global");
 			
 			return;
 		}
@@ -156,11 +146,37 @@ namespace aram
 
 		/**
 		* Getter
+		* 
+		* \return FrameSet * current frame set
 		*/
-		FrameSet * frameSet()
+		FrameSet * frameSet() const
 		{
 			return _fs;
 		}
+
+
+		/**
+		* Getter
+		* 
+		* \return vecROI * current ROI vector
+		*/
+		vecROI * ROI() const
+		{
+			return &_rois;
+		}
+
+
+		/**
+		* Getter
+		* 
+		* \return vecTag * current tags vector
+		*/
+		vecTag * tags()
+		{
+			return &_tags;
+		}
+
+
 	private :
 		ROIDetector _r; /**< Region of interest detection method */
 
@@ -168,8 +184,6 @@ namespace aram
 
 		vecROI _rois; /**< Store ROIs found */
 		vecTag _tags; /**< Store tags found */
-
-		Exporter e;
 	};
 };
 

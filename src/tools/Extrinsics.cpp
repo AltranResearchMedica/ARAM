@@ -4,6 +4,8 @@ namespace aram
 {
 	Extrinsics::Extrinsics(Intrinsics intr, vecPoint2D imgPoints, vecPoint3D objPoints):_intr(intr)
 	{
+		_rvec = cv::Mat::zeros(3,1,CV_64FC1);
+		_tvec = cv::Mat::zeros(3,1,CV_64FC1);
 		compute(imgPoints,objPoints);
 	}
 	
@@ -25,24 +27,31 @@ namespace aram
 		_tvec = tvec.clone();
 	}
 	
-	void Extrinsics::compute(vecPoint2D imgPoints, vecPoint3D objPoints)
+	void Extrinsics::compute(vecPoint2D iP, vecPoint3D oP)
 	{
-		_objPts = objPoints;
-		_imgPts = imgPoints;
+		_objPts = oP;
+		_imgPts = iP;
 
-		
-		cv::solvePnP(objPoints, imgPoints, _intr.cameraMatrix(), _intr.distorsionCoefficient(), _rvec, _tvec);
-		
-		float mean = 0.0f;
-		for(unsigned int i=0;i<objPoints.size();++i)
-		{
-			Point2D proj = project(objPoints[i]);
-			mean += (float) cv::norm(proj-imgPoints[i]);
-		}
-		mean/=objPoints.size();
+		cv::solvePnP(_objPts, _imgPts, _intr.cameraMatrix(), _intr.distorsionCoefficient(), _rvec, _tvec, false, CV_ITERATIVE);
 
 		cv::Rodrigues(_rvec,_rmat);
-		
+	}
+
+	float Extrinsics::error()
+	{
+		if(_imgPts.size()!=_objPts.size()) ARAMException(__LINE__, __FILE__, "Extrinsics::error", "Object points and images points vector size does'nt match");
+
+		vecPoint2D projPoints = project(_objPts);
+
+		float err = 0.0;
+		for(unsigned int i=0;i<_imgPts.size();++i)
+		{
+			err+=std::sqrt((_imgPts[i].x-projPoints[i].x)*(_imgPts[i].x-projPoints[i].x)+(_imgPts[i].y-projPoints[i].y)*(_imgPts[i].y-projPoints[i].y));
+		}
+
+		err/= (float) _imgPts.size();
+
+		return err;
 	}
 
 	const cv::Mat & Extrinsics::rotationMatrix()

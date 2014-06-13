@@ -13,7 +13,10 @@ namespace aram
 		vecPoint3D objPoints;
 		vecPoint2D imgPoints;
 		
+		
 		for(it=begin;it!=end;++it)
+		{
+		//if((*it)->id()==0)
 		{
 			try
 			{
@@ -24,22 +27,22 @@ namespace aram
 				float s = t.size;
 				
 				objPoints.push_back(Point3D(x0,y0,0.0f));
-				objPoints.push_back(Point3D(x0+s,y0,0.0f));
-				objPoints.push_back(Point3D(x0+s,y0+s,0.0f));
 				objPoints.push_back(Point3D(x0,y0+s,0.0f));
+				objPoints.push_back(Point3D(x0+s,y0+s,0.0f));
+				objPoints.push_back(Point3D(x0+s,y0,0.0f));
+
 
 				vecPoint2D corners = (*it)->corners();
 				
-				iteratorPoint2D it;
-				for(it=corners.begin();it!=corners.end();++it)
-				{
-					imgPoints.push_back(*it);
-				}
+				imgPoints.push_back(corners[0]);
+				imgPoints.push_back(corners[1]);
+				imgPoints.push_back(corners[2]);
+				imgPoints.push_back(corners[3]);
 			}
-			catch(ARAMException &)
+			catch(std::exception &)
 			{
 			}
-
+		}
 		}
 		
 		return Extrinsics(intr,imgPoints,objPoints);

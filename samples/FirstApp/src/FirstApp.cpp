@@ -1,6 +1,6 @@
 #include <ARAM/TagDetector.hpp> // Main ARAM class
-#include <ARAM/tag/StandardTag.hpp> // Tag validator
-#include <ARAM/ROIDetector/EdgeDetector.hpp> // Region of interest detection
+#include <ARAM/tag/LocalThreshTag.hpp> // Tag validator
+#include <ARAM/ROIDetector/LineFitting.hpp> // Region of interest detection
 
 #include <opencv2/opencv.hpp> // OpenCV data structure
 
@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 		// Detection parameters :
 		// -> Region of interest detection
 		// -> Tag validator
-		typedef aram::TagDetector<aram::EdgeDetector,aram::StandardTag> myDetector;
+		typedef aram::TagDetector<aram::LineFitting,aram::LocalThreshTag> myDetector;
 		
 		// Tag detector instanciation
 		myDetector *detector = new myDetector();

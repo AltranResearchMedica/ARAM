@@ -47,7 +47,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _EDGEDETECTOR_HPP_
 #define _EDGEDETECTOR_HPP_
 
-
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/ROIDetector/IROIDetector.hpp>
@@ -64,6 +63,12 @@ namespace aram
 	{
 	public :
 		/**
+		* Constructor
+		*/
+		EdgeDetector();
+
+
+		/**
 		* Find roi
 		*
 		* \param[in,out] vecROI *rois vector of ROIs
@@ -71,6 +76,13 @@ namespace aram
 		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
 		*/
 		void findROI(vecROI *, vecTag *, FrameSet *);
+
+
+	private :
+		float _factEpsilon; /**< approxPolyDP factor for epsilon parameter (see openCV doc) */
+		int _blockSize; /**< Adaptive threshold kernel size */
+		double _constant; /**< Adaptibve threshold parameter (see openCV doc) */
+		double _minPerimeter; /**< minimum perimeter value to be a ROI (trivial condition for tag detection) in pixel*/
 	};
 };
 

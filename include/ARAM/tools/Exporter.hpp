@@ -72,6 +72,14 @@ namespace aram
 
 
 		/**
+		* Constuctor
+		*
+		* \param[in] std::string target
+		*/
+		Exporter(std::string target);
+
+
+		/**
 		* ++ operator overload
 		*/
 		Exporter& operator++();
@@ -124,7 +132,7 @@ namespace aram
 		*/
 		void frame(cv::Mat &, const std::string &);
 
-	private :
+
 		/**
 		* Write in a file
 		*
@@ -133,8 +141,10 @@ namespace aram
 		*/
 		void write(const std::string &, const std::string &);
 
+	private :
+		std::string m_target; /**< Directory target */
 
-		int _count; /** < Frame counter */
+		int m_count; /** < Frame counter */
 	};
 };
 #endif

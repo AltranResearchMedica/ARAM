@@ -121,6 +121,13 @@ namespace aram
 		const vecPoint2D corners() const;
 
 
+		/**
+		* Setter
+		*
+		* \param[in] vecPoint2D new corners
+		*/
+		void corners(vecPoint2D);
+
 	private :
 		vecPoint2D _corners; /**< ROI which contains tag */
 	};
