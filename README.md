@@ -28,13 +28,14 @@ The library main classes are divided as following:
 
 - aram::TagDetector<TagType,ROIDetector> : main aram class, used to detect tags in a frame.
 - aram::IROIDetector : Interface for ROI Detection
-- aram::EdgeDetector : currently best IROIDetector implementation 
-- aram::ITag : Interface for Tag validation
-- aram::HammingTag : currently best ITag implementation
-- aram::Intrinscis : store camera intrinsics parameters
-- aram::Extrinsics : compute extrinsics parameters
-- aram::ICoordinate : compute extrinsics parameters, using multi tracking method
-- aram::Chessboard : currently best ICoordinate implementation
+- aram::CannyFittingDetector : currently best IROIDetector implementation 
+- aram::AdaptiveThreshDetector : another IROIDetector implementation 
+- aram::ITagMatcher : Interface for Tag validation
+- aram::LocalThreshTagMatcher : currently best ITagMatcher implementation
+- aram::Intrinscic : store camera intrinsic parameters
+- aram::Extrinsic : compute extrinsic parameters
+- aram::ICoordinate : compute extrinsics parameters, using one or more tags
+- aram::MultiTag : currently best ICoordinate implementation
 
 
 # Compile
