@@ -34,104 +34,127 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file ITag.hpp
-* \brief Interface for tag, determine if potential tag is or not a tag
+* \file TagDictionnary.hpp
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 13 mars 2014
+* \date 01 avril 2014
 *
 */
 
-#ifndef _ITAG_HPP_
-#define _ITAG_HPP_
+#ifndef _TAGDICTIONNARY_HPP_
+#define _TAGDICTIONNARY_HPP_
 
 //std include
-#include <string>
+#include <bitset>
 
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
-#include <ARAM/FrameSet.hpp>
-#include <ARAM/ROIDetector/ROI.hpp>
-
-#include <ARAM/tools/Extrinsics.hpp>
-#include <ARAM/tools/Intrinsics.hpp>
 
 //openCV include
 #include <opencv2/opencv.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
 
 namespace aram
 {
-	/** 
-	* Interface for tag, determine if potential tag is or not a tag
+	/**
+	* Binary tree's node
 	*/
-	class ARAM_EXPORT ITag
+	class Node
 	{
 	public :
 		/**
-		* Construct a Tag based on a ROI
+		* Cconstructor
 		*
-		* \param[in] ROI & Region of interest for this tag (contains corners)
+		* \param[in] int node value (0/1)
 		*/
-		ITag(ROI &);
+		Node(int);
 		
+		
+		Node *p_left; /**< left soon (0 branch)*/
+		Node *p_right; /**< right soon (1 branch) */
+		int m_value; /**< node value (0/1) */
+	};
 
+
+	/**
+	* TagDictionnary structure for search operations, implements pattern singleton
+	*/
+	class TagDictionnary
+	{
+	public :
 		/**
-		* check tag validity
+		* Search a value in tree
 		*
-		* \param[in,out] vecROI *rois vector of ROIs
-		* \param[in] vecTag *tags vector of tags (always empty, useless since 0.1)
-		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
+		* \param[in] cv::Mat CV_8UC1 square matrix 9x9
+		* \return bool true if found
 		*/
-		virtual bool checkTag(vecROI *, vecTag *, FrameSet *)=0;
+		bool binaryTreeSearch(cv::Mat &);
 
 
 		/**
-		* Compute extrinsics parameter associeted with this tag
-		* 
-		* \param[in] Intrinsics & intrinsics parameters
-		* \param[in] float size tag size (in user define unit, for example mm)
-		* \return Extrinsics & rotation matrix
-		*/
-		virtual Extrinsics extrinsics(Intrinsics &, float)=0;
-
-
-		/**
-		* Unique id for this marker
+		* Search a value in tree
 		*
-		* \return int id of this marker
+		* \param[in] cv::Mat CV_8UC1 square matrix 9x9
+		* \param int hamming distance tolerance
+		* \return tag id if found, -1 if not
 		*/
-		virtual int id()=0;
-
-
+		int hammingSearch(cv::Mat &, int);
+		
+		
 		/**
-		* Rotate n times corners list (clock wise)
-		*/
-		void rotate(int n);
-
-
-		/**
-		* Getter
-		* 
-		* \return vecPoint2D ROI corners
-		*/
-		const vecPoint2D corners() const;
-
-
-		/**
-		* Setter
+		* Pattern singleton implementation, return an unique instance of TagDictionnary
 		*
-		* \param[in] vecPoint2D new corners
+		* \return unique instance of TagDictionnary
 		*/
-		void corners(vecPoint2D);
+		static TagDictionnary & getInstance();
 
 	private :
-		vecPoint2D _corners; /**< ROI which contains tag */
+		/**
+		* Insert a new value in tree
+		*
+		* \param[in] std::bitset<81> contains marker in linear form
+		*/
+		void insert(std::bitset<81>);
+
+		
+		/**
+		* Compute hamming distance between two bitset
+		*
+		* \param[in] std::bitset<81> a first bitset for comparaison
+		* \param[in] std::bitset<81> b second bitset for comparaison
+		* \return int hamming distance beetween two bitset
+		*/
+		int hammingDistance(std::bitset<81>, std::bitset<81>);
+
+		/**
+		* Build tree
+		*/
+		void read();
+		
+		
+		/**
+		* Constructor
+		*/
+		TagDictionnary();
+
+
+		/**
+		* Assignement operator
+		*/
+		TagDictionnary& operator=(const TagDictionnary&);
+
+
+		/**
+		* Copy constructor
+		*/
+		TagDictionnary(const TagDictionnary&);
+
+	
+		static TagDictionnary s_instance; /**< unique instance of TagDictionnary */
+
+		Node *p_root; /**< root node, for binary tree search */
+		std::vector< std::bitset<81> > m_sets; /**< bitsets storage, for hamming search */
 	};
 };
-
 #endif
-

@@ -34,15 +34,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file Extrinsics.hpp
+* \file Extrinsic.hpp
 * \brief Contains rotation matrix and translation vector
 * \author Alexandre Kornmann
 * \version 1.0
 * \date 10 avril 2014
 * 
 */
-#ifndef _EXTRINSICS_HPP_
-#define _EXTRINSICS_HPP_
+#ifndef _EXTRINSIC_HPP_
+#define _EXTRINSIC_HPP_
 
 //Open CV include
 #include <opencv2/opencv.hpp>
@@ -52,54 +52,45 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
-#include <ARAM/tools/Intrinsics.hpp>
+#include <ARAM/tools/Intrinsic.hpp>
 
 namespace aram
 {
 	/**
 	* Contains rotation matrix and translation vector
 	*/
-	class ARAM_EXPORT Extrinsics
+	class ARAM_EXPORT Extrinsic
 	{
 	public :
 		/**
 		* Compute extrinsics parameters using solvePnP (see OpenCV)
 		*
-		* \param[in] Intrinsics intr intrinsics parameters for the camera
+		* \param[in] Intrinsic intr intrinsics parameters for the camera
 		* \param[in] vecPoint2D imgPoint
 		* \param[in] vecPoint3D objPoint
 		*/
-		Extrinsics(Intrinsics, vecPoint2D, vecPoint3D);
+		Extrinsic(Intrinsic intr, vecPoint2D imgPoint, vecPoint3D objPoint);
 
 		
 		/**
 		* Compute extrinsics parameters using solvePnP (see OpenCV)
 		*
-		* \param[in] Intrinsics intr intrinsics parameters for the camera
+		* \param[in] Intrinsic intr intrinsics parameters for the camera
 		* \param[in] vecPoint2D imgPoint
 		* \param[in] vecPoint3D objPoint
-		* \param[out] float & error reprojection error
+		* \param[out] float &error reprojection error
 		*/
-		Extrinsics(Intrinsics, vecPoint2D, vecPoint3D, float &);
+		Extrinsic(Intrinsic intr, vecPoint2D imgPoint, vecPoint3D objPoint, float &error);
 
 
 		/**
 		* Store rotation matrix and translation matrix
 		*
-		* \param[in] Intrinsics intr intrinsics parameters for the camera
+		* \param[in] Intrinsic intr intrinsics parameters for the camera
 		* \param[in] cv::Mat &rmat rotation matrix
 		* \param[in] cv::Mat &tvec translation vector
 		*/
-		Extrinsics(Intrinsics, cv::Mat &, cv::Mat &);
-
-
-		/**
-		* Compute extrinsics parameters using solvePnP (see OpenCV)
-		*
-		* \param[in] vecPoint2D imgPoint
-		* \param[in] vecPoint3D objPoint
-		*/
-		void compute(vecPoint2D, vecPoint3D);
+		Extrinsic(Intrinsic intr, cv::Mat &rmat, cv::Mat &tvec);
 
 
 		/**
@@ -161,16 +152,25 @@ namespace aram
 		*/
 		vecPoint2D imgPoints();
 
-		void glGetModelViewMatrix(double modelview_matrix[16]);
-	private :
-		cv::Mat _rmat; /**< rotation matrix (3x3)*/
-		cv::Mat _rvec; /**< rotation vector (3x1)*/
-		cv::Mat _tvec; /**< translation vector (3x1)*/
 
-		Intrinsics _intr;
+	private :
+		/**
+		* Compute extrinsics parameters using solvePnP (see OpenCV)
+		*
+		* \param[in] vecPoint2D imgPoint
+		* \param[in] vecPoint3D objPoint
+		*/
+		void compute(vecPoint2D imgPoint, vecPoint3D objPoint);
+
+
+		cv::Mat m_rmat; /**< rotation matrix (3x3)*/
+		cv::Mat m_rvec; /**< rotation vector (3x1)*/
+		cv::Mat m_tvec; /**< translation vector (3x1)*/
+
+		Intrinsic m_intr;
 		
-		vecPoint2D _imgPts;
-		vecPoint3D _objPts;
+		vecPoint2D m_imgPts;
+		vecPoint3D m_objPts;
 	};
 };
 #endif

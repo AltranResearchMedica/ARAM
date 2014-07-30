@@ -47,11 +47,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
-#include <ARAM/tools/Extrinsics.hpp>
-#include <ARAM/tag/ITag.hpp>
 
-//openCV include
-#include <opencv2/opencv.hpp>
+#include <ARAM/tools/Extrinsic.hpp>
+#include <ARAM/tag/ITagMatcher.hpp>
 
 namespace aram
 {
@@ -66,10 +64,10 @@ namespace aram
 		* 
 		* \param[in] iteratorTag begin iterator on begin of valid tag list
 		* \param[in] iteratorTag end iterator on end of valid tag list
-		* \param[in] Intrinsics intr Intrinsics parameters
-		* \return Extrinsics extrinsics parameters
+		* \param[in] Intrinsic intr Intrinsic parameters
+		* \return Extrinsic extrinsics parameters
 		*/
-		virtual Extrinsics compute(iteratorTag, iteratorTag, Intrinsics)=0;
+		virtual Extrinsic compute(iteratorTag, iteratorTag, Intrinsic)=0;
 	};
 };
 

@@ -34,7 +34,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file StandardTag.hpp
+* \file BinaryTreeTagMatcher.hpp
 * \brief Standard tag
 * \author Alexandre Kornmann
 * \version 1.0
@@ -42,72 +42,44 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *
 */
 
-#ifndef _STANDARDTAG_HPP_
-#define _STANDARDTAG_HPP_
-
-//std include
-#include <string>
+#ifndef _BINARYTREETAGMATCHER_HPP_
+#define _BINARYTREETAGMATCHER_HPP_
 
 //ARAM Include
 #include <ARAM/export.hpp>
-#include <ARAM/tag/ITag.hpp>
-#include <ARAM/tools/BinaryTree.hpp>
+#include <ARAM/typedef.hpp>
+#include <ARAM/ARAMException.hpp>
 
-//openCV include
-#include <opencv2/opencv.hpp>
+#include <ARAM/tag/ITagMatcher.hpp>
+#include <ARAM/tools/TagDictionnary.hpp>
 
 namespace aram
 {
 	/** 
 	* Standard tag detection
 	*/
-	class ARAM_EXPORT StandardTag : public ITag
+	class ARAM_EXPORT BinaryTreeTagMatcher : public ITagMatcher
 	{
 	public :
 		/**
 		* Constructor
 		*
-		* \param[in] ROI & region of interest where is the tag
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
 		*/
-		StandardTag(ROI &);
+		BinaryTreeTagMatcher(FrameSet *fs);
 		
 		
 		/**
-
-		*/
-		bool checkTag(vecROI *, vecTag *, FrameSet *);
-
-
-		/**
-		* Compute extrinsics parameter associeted with this tag
-		* 
-		* \param[in] Intrinsics & intrinsics parameters
-		* \param[in] float size tag size (in user define unit, for example mm)
-		* \return Extrinsics & rotation matrix
-		*/
-		Extrinsics extrinsics(Intrinsics &, float);
-
-
-		/**
-		* Unique id for this marker
+		* check tag validity
 		*
-		* \return int id of this marker
+		* \param[in,out] ROI *roi Region of interest to check
 		*/
-		int id();
-
+		bool checkTag(ROI *roi);
 
 
 	private :
-		/**
-		* Rotate CV_8UC1 matrix (clock wise)
-		*
-		* \param[in] cv::Mat & matrix to rotate, contains  
-		* \param[out] cv::Mat & matrix after rotations  
-		*/
-		void rotate(cv::Mat &, cv::Mat &);
-
-		int _tagSize; /**< tag size size in "bits number" (border include)*/
-		int _scale; /**< value of perspective scale */
+		int m_tagSize; /**< tag size size in "bits number" (border include)*/
+		int m_scale; /**< value of perspective scale */
 	};
 };
 

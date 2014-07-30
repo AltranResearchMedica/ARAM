@@ -2,9 +2,13 @@
 
 namespace aram
 {
+	ROI::ROI():m_id(-1)
+	{
+	}
+
 	void ROI::corners(const vecPoint2D &pts)
 	{
-		_corners.clear();
+		m_corners.clear();
 
 		constIteratorPoint2D it;
 
@@ -15,18 +19,53 @@ namespace aram
 
 	void ROI::corners(const Point2D &pt)
 	{
-		if(_corners.size()>=4) throw ARAMException(__LINE__, __FILE__, "ROI::corners", "Too many corners");
+		CV_Assert(m_corners.size()<4);
 
-		_corners.push_back(pt);
+		m_corners.push_back(pt);
 		
 		return;
 	}
 	
-	vecPoint2D ROI::corners() const
+	vecPoint2D & ROI::corners()
 	{
-		if(_corners.size()!=4) throw ARAMException(__LINE__, __FILE__, "ROI::corners", "Bad ROI content");
+		CV_Assert(m_corners.size()==4);
+
+		return m_corners;
+	}
 		
-		return _corners;
+	void ROI::rotate(int n)
+	{
+		std::rotate(m_corners.begin(),m_corners.begin()+n%m_corners.size(),m_corners.end());
+		return;
+	}
+
+	Extrinsic ROI::extrinsic(const Intrinsic &intr, float size)
+	{
+		CV_Assert(m_id!=-1);
+		CV_Assert(intr.valid());
+		
+		vecPoint3D objPoints;
+
+		float s = size/2.0f;
+		objPoints.push_back(Point3D(-s, -s, 0.0));
+		objPoints.push_back(Point3D(-s,s,0.0));
+		objPoints.push_back(Point3D(s,s,0.0));
+		objPoints.push_back(Point3D(s,-s,0.0));
+		
+
+		return Extrinsic(intr,corners(),objPoints);
+	}
+
+
+	int ROI::id() const
+	{
+		return m_id;
+	}
+
+	void ROI::id(int i)
+	{
+		m_id = i;
+		return;
 	}
 
 };

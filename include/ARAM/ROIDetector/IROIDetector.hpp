@@ -44,10 +44,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _ROIDETECTOR_HPP_
 #define _ROIDETECTOR_HPP_
 
-
-//std include
-#include <string>
-
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
@@ -56,8 +52,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <ARAM/ROIDetector/ROI.hpp>
 #include <ARAM/FrameSet.hpp>
 
-//openCV include
-#include <opencv2/core/core.hpp>
 
 namespace aram
 {
@@ -68,13 +62,49 @@ namespace aram
 	{
 	public :
 		/**
+		* Constructor
+		*
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
+		*/
+		IROIDetector(FrameSet *fs);
+		
+
+		/**
 		* Find roi
 		*
 		* \param[in,out] vecROI *rois vector of ROIs
 		* \param[in] vecTag *tags vector of tags (always empty, useless since 0.1)
 		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
 		*/
-		virtual void findROI(vecROI *, vecTag *, FrameSet *)=0;
+		virtual void findROI(vecROI *rois)=0;
+		
+
+	protected : 
+		/**
+		* Save a frame
+		* \param[in] std::string name unique name to store a frame
+		* \param[in] const cv::Mat &mat frame to store
+		*/
+		void save(std::string name, cv::Mat &mat);
+
+		
+		/**
+		* Load a frame, throw ARAMException if this frame doesn't exist
+		* \param[in] std::string name unique name to load
+		*/
+		cv::Mat & load(std::string name);
+
+		
+		/**
+		* Test if a frame name is used
+		* \param[in] std::string name frame name
+		* \return bool true if name is found
+		*/
+		bool exist(std::string name);
+
+
+	private :
+		FrameSet *p_fs; /** < FrameSet contains all current frame created by the library */
 	};
 };
 

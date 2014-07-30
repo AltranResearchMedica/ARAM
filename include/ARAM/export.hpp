@@ -62,7 +62,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   #define ARAM_EXPORT
 #endif
 
-#define BENCH
+
+// Use it if you want to export intermediate frame like Canny, Contours, and so on ... Take time !
+#define EXPORT_FRAME
+
 
 
 /**

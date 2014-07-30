@@ -34,84 +34,36 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file Intrinsics.hpp
-* \brief Contains camera matrix and distorsion coefficients
+* \file contourClosing.hpp
+* \brief Tag valdiation, using hamming correction, and local thresholding
 * \author Alexandre Kornmann
-* \version 1.0
-* \date 10 avril 2014
-* 
+* \version 1.3
+* \date 24 juin 2014
+*
 */
-#ifndef _INTRINSICS_HPP_
-#define _INTRINSICS_HPP_
 
+#ifndef _CONTOURCLOSING_HPP_
+#define _CONTOURCLOSING_HPP_
 
-//std include
-#include <string>
-#include <fstream>
-#include <iostream>
-#include <ios>
-
-//Open CV include
-#include <opencv2/opencv.hpp>
 
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
-#include <ARAM/ARAMException.hpp>
+#include <ARAM/tools/MilgramContourClosing.hpp>
+#include <ARAM/tools/NaiveContourClosing.hpp>
+
+//openCV include
+#include <opencv2/opencv.hpp>
 
 namespace aram
 {
-	/**
-	* Contains camera matrix and distorsion coefficients
-	*/
-	class ARAM_EXPORT Intrinsics
+	typedef enum
 	{
-	public :
-		/**
-		* Constructor
-		*
-		* \param[in] std::string file xml path file with parameters (openCV format)
-		*/
-		Intrinsics(const std::string);
+		ARAM_NAIVE,
+		ARAM_MilgramContourClosing,
+	} CLOSURE_TYPE;
 
-		
-		/**
-		* Getter, called by constructor
-		*
-		* \param[in] std::string file xml path file with parameters (openCV format)
-		*/
-		void load(const std::string);
-
-
-		/**
-		* Getter
-		*
-		* \return cv::Mat & camera matrix
-		*/
-		const cv::Mat & cameraMatrix();
-
-
-		/**
-		* Getter
-		*
-		* \return cv::Mat & distorsion coefficients
-		*/
-		const cv::Mat & distorsionCoefficient();
-
-
-		/**
-		* \return bool true if camera matrix and distortion coefficients are filled
-		*/
-		bool valid();
-
-		
-		void argConvGLcpara2( double cparam[3][4], int width, int height, double gnear, double gfar, double m[16], bool invert);
-		void glGetProjectionMatrix( cv::Size orgImgSize, cv::Size size,double proj_matrix[16],double gnear,double gfar,bool invert);
-
-	private :
-		cv::Mat _cameraMatrix; /**< camera matrix coefficients */ 
-		cv::Mat _distorsionCoefficient; /**<distorsion coefficients */
-	};
+	void close(cv::Mat &toClose, CLOSURE_TYPE type);
 };
 
 #endif

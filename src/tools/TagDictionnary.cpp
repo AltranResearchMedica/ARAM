@@ -1,41 +1,41 @@
-#include <ARAM/tools/BinaryTree.hpp>
+#include <ARAM/tools/TagDictionnary.hpp>
 
 namespace aram
 {
-	Node::Node(int v):_value(v)
+	Node::Node(int v):m_value(v)
 	{
-		_left = NULL;
-		_right = NULL;
+		p_left = NULL;
+		p_right = NULL;
 	}
 
-	BinaryTree BinaryTree::_instance=BinaryTree();
+	TagDictionnary TagDictionnary::s_instance=TagDictionnary();
 
-	BinaryTree::BinaryTree()
+	TagDictionnary::TagDictionnary()
 	{
-		_root = new Node(-1);
-		_root->_left = NULL;
-		_root->_right = NULL;
+		p_root = new Node(-1);
+		p_root->p_left = NULL;
+		p_root->p_right = NULL;
 
 		read();
 	}
 
-	BinaryTree& BinaryTree::operator=(const BinaryTree&)
+	TagDictionnary& TagDictionnary::operator=(const TagDictionnary&)
 	{
-		return _instance;
+		return s_instance;
 	}
 
-	BinaryTree::BinaryTree(const BinaryTree&)
+	TagDictionnary::TagDictionnary(const TagDictionnary&)
 	{
 	}
 
-	BinaryTree & BinaryTree::getInstance()
+	TagDictionnary & TagDictionnary::getInstance()
 	{
-		return _instance;
+		return s_instance;
 	}
 
-	void BinaryTree::insert(std::bitset<81> bits)
+	void TagDictionnary::insert(std::bitset<81> bits)
 	{
-		Node *parentNode = _root;
+		Node *parentNode = p_root;
 
 		for(int pos=0;pos<81;++pos)
 		{
@@ -44,27 +44,27 @@ namespace aram
 			switch(v)
 			{
 			case 0:
-				if(parentNode->_left==NULL) parentNode->_left = new Node(0);
-				parentNode = parentNode->_left;
+				if(parentNode->p_left==NULL) parentNode->p_left = new Node(0);
+				parentNode = parentNode->p_left;
 				break;
 			case 1:
-				if(parentNode->_right==NULL) parentNode->_right = new Node(1);
-				parentNode = parentNode->_right;
+				if(parentNode->p_right==NULL) parentNode->p_right = new Node(1);
+				parentNode = parentNode->p_right;
 				break;
 
 			default :
-				throw ARAMException(__LINE__, __FILE__, "BinaryTree::insert", "Wrong value");
+				throw ARAMException(__LINE__, __FILE__, "TagDictionnary::insert", "Wrong value");
 				break;
 			}
 		}
 
-		_sets.push_back(bits);
+		m_sets.push_back(bits);
 	}
 
-	bool BinaryTree::search(cv::Mat &bits)
+	bool TagDictionnary::binaryTreeSearch(cv::Mat &bits)
 	{
 		bool res = true;
-		Node *parentNode = _root;
+		Node *parentNode = p_root;
 
 		for(int row=0;row<9&&res;++row)
 		{
@@ -74,19 +74,19 @@ namespace aram
 				switch(v)
 				{
 				case 0:
-					if(parentNode->_left==NULL) res = false;
+					if(parentNode->p_left==NULL) res = false;
 						
-					parentNode = parentNode->_left;
+					parentNode = parentNode->p_left;
 					break;
 
 				case 1:
-					if(parentNode->_right==NULL) res = false;
+					if(parentNode->p_right==NULL) res = false;
 
-					parentNode = parentNode->_right;
+					parentNode = parentNode->p_right;
 					break;
 
 				default :
-					throw ARAMException(__LINE__, __FILE__, "BinaryTree::insert", "Wrong value");
+					throw ARAMException(__LINE__, __FILE__, "TagDictionnary::insert", "Wrong value");
 					break;
 				}
 			}
@@ -95,7 +95,7 @@ namespace aram
 		return res;
 	}
 
-	int BinaryTree::hammingSearch(cv::Mat &bits, int dist)
+	int TagDictionnary::hammingSearch(cv::Mat &bits, int dist)
 	{
 		std::bitset<81> set;
 		for(int i=0;i<9;++i)
@@ -108,10 +108,10 @@ namespace aram
 		}
 		
 		int min = 81;
-		int indMin = _sets.size();
-		for(unsigned int i=0;i<_sets.size();++i)
+		int indMin = m_sets.size();
+		for(unsigned int i=0;i<m_sets.size();++i)
 		{
-			int hammDist = hammingDistance(_sets[i],set);
+			int hammDist = hammingDistance(m_sets[i],set);
 			if(hammDist<min)
 			{
 				min = hammDist;
@@ -123,7 +123,7 @@ namespace aram
 		else return -1;
 	}
 
-	int BinaryTree::hammingDistance(std::bitset<81> a, std::bitset<81> b)
+	int TagDictionnary::hammingDistance(std::bitset<81> a, std::bitset<81> b)
 	{
 		int dist = 0;
 		for(int i=0;i<81;++i)
@@ -134,7 +134,7 @@ namespace aram
 		return dist;
 	}
 
-	void BinaryTree::read()
+	void TagDictionnary::read()
 	{
 		std::vector< std::bitset<81> > tags;
 		tags.push_back(std::bitset<81>(std::string("000000000001011000011101110000000010000000110011010000011110110011100010000000000")));

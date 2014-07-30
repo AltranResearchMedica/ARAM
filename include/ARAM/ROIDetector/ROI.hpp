@@ -45,16 +45,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _ROI_HPP_
 #define _ROI_HPP_
 
-//std include
-#include <string>
-
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
-//openCV include
-#include <opencv2/core/core.hpp>
+#include <ARAM/tools/Extrinsic.hpp>
+
 
 namespace aram
 {
@@ -65,19 +62,24 @@ namespace aram
 	{
 	public :
 		/**
+		* Constructor
+		*/
+		ROI();
+
+		/**
 		* Push a vector of Point2D, clear current vector
 		*
-		* \param[in] vecPoint2D & new vector to store
+		* \param[in] vecPoint2D &pts new vector to store
 		*/
-		void corners(const vecPoint2D &);
+		void corners(const vecPoint2D &pts);
 
 
 		/**
 		* Push a Point2D
 		*
-		* \param[in] const Point2D & new Point2f to store
+		* \param[in] const Point2D &pt new Point2f to store
 		*/
-		void corners(const Point2D &);
+		void corners(const Point2D &pt);
 
 
 		/**
@@ -85,12 +87,49 @@ namespace aram
 		*
 		* \return vecPoint2D corners positions (if 4 valid points store, throw an exception if not)
 		*/
-		vecPoint2D corners() const;
+		vecPoint2D & corners();
+		
+		
+		/**
+		* Rotate n times corners list (clock wise)
+		* 
+		* \param[in] int n number of rotation
+		*/
+		void rotate(int n);
+		
+
+		/**
+		* Compute extrinsic parameter associeted with this tag
+		* 
+		* \param[in] Intrinsic & intrinsic parameters
+		* \param[in] float size tag size (in user define unit, for example millimeters)
+		* \return Extrinsic & rotation matrix
+		*/
+		Extrinsic extrinsic(const Intrinsic &intr, float size);
+
+
+		/**
+		* Getter
+		* Unique id for this marker
+		*
+		* \return int id of this marker
+		*/
+		int id() const;
+
+
+		/**
+		* Setter
+		* Unique id for this marker
+		*
+		* \param[in] int id of this marker
+		*/
+		void id(int i);
 
 
 	private :
-		vecPoint2D _corners; /**< corners positions */
+		vecPoint2D m_corners; /**< corners positions */
 
+		int m_id; /**< Tag id (-1 if it's not a tag) */
 	};
 };
 

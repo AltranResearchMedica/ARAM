@@ -11,14 +11,6 @@
 #ifndef _TAGDETECTOR_HPP_
 #define _TAGDETECTOR_HPP_
 
-
-//std include 
-#include <vector>
-#include <string>
-#include <fstream>
-#include <iostream>
-#include <ios>
-
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
@@ -26,13 +18,7 @@
 
 #include <ARAM/FrameSet.hpp>
 #include <ARAM/ROIDetector/IROIDetector.hpp>
-
-#include <ARAM/tag/ITag.hpp>
-
-#include <ARAM/tools/Exporter.hpp>
-
-//openCV include
-#include <opencv2/opencv.hpp>
+#include <ARAM/tag/ITagMatcher.hpp>
 
 namespace aram
 {		
@@ -46,12 +32,13 @@ namespace aram
 	public :		
 		/**
 		* Constructor
-		* Instantiate the ROIs detectector and a frame set storage
+		* Instantiate the ROIs detector and a frame set storage
 		*/
-		TagDetector():
-		_r(ROIDetector()),
-		_fs(new FrameSet())
+		TagDetector()
 		{
+			p_fs = new FrameSet();
+			p_roiDetect = new ROIDetector(p_fs);
+			p_tagMatch = new TagType(p_fs);
 			reset();
 		}
 				
@@ -63,6 +50,9 @@ namespace aram
 		~TagDetector()
 		{
 			reset();
+			delete p_tagMatch;
+			delete p_roiDetect;
+			delete p_fs;
 		}
 
 
@@ -71,21 +61,20 @@ namespace aram
 		*/
 		void reset()
 		{
-			iteratorTag itTag;
+			// clean ROIs
 			iteratorROI itRoi;
-
-			for(itRoi=_rois.begin();itRoi!=_rois.end();++itRoi)
+			for(itRoi=m_rois.begin();itRoi!=m_rois.end();++itRoi)
 			{
 				delete *itRoi;
 			}
-			_rois.clear();
+			m_rois.clear();
 			
-			for(itTag=_tags.begin();itTag!=_tags.end();++itTag)
-			{
-				delete *itTag;
-			}
-			_tags.clear();
-
+			// clean tags
+			// do not release tag vector content, because it's already done with roi
+			m_tags.clear();
+			
+			// clean frameSet
+			p_fs->reset();
 		}
 
 		/**
@@ -96,28 +85,19 @@ namespace aram
 		*/
 		void detect(const cv::Mat &frame)
 		{
-			cv::Mat copy = frame.clone();
-
 			reset();
-			_fs->reset();
-			
+
 			// current frame copy
-			_fs->save("currentFrame",copy);
+			p_fs->save("currentFrame",frame);
 
 			// ROI detection
-			_r.findROI(&_rois,&_tags,_fs);
-			
+			p_roiDetect->findROI(&m_rois);
+
 			// Tag computing
 			iteratorROI it;
-			for(it=_rois.begin();it!=_rois.end();++it)
+			for(it=m_rois.begin();it!=m_rois.end();++it)
 			{
-				TagType *t = new TagType(*(*it));
-				
-				if(t->checkTag(&_rois,&_tags,_fs)) _tags.push_back(t);
-				else
-				{
-					delete t;
-				}
+				if(p_tagMatch->checkTag(*it)) m_tags.push_back(*it);
 			}
 			
 			return;
@@ -130,7 +110,7 @@ namespace aram
 		*/
 		iteratorTag begin()
 		{
-			return _tags.begin();
+			return m_tags.begin();
 		}
 
 
@@ -141,7 +121,7 @@ namespace aram
 		*/
 		iteratorTag end()
 		{
-			return _tags.end();
+			return m_tags.end();
 		}
 
 		/**
@@ -151,7 +131,7 @@ namespace aram
 		*/
 		FrameSet * frameSet() const
 		{
-			return _fs;
+			return p_fs;
 		}
 
 
@@ -162,7 +142,7 @@ namespace aram
 		*/
 		vecROI * ROI() const
 		{
-			return &_rois;
+			return &p_roiDetectois;
 		}
 
 
@@ -171,19 +151,42 @@ namespace aram
 		* 
 		* \return vecTag * current tags vector
 		*/
-		vecTag * tags()
+		vecTag * tag()
 		{
-			return &_tags;
+			return &m_tags;
 		}
 
 
+        /**
+        * Getter
+        *
+        * \return IROIDetector * current detector
+        */
+        IROIDetector *detector()
+        {
+            return p_roiDetect;
+        }
+
+
+        /**
+        * Getter
+        *
+        * \return ITagMatcher * current sampler
+        */
+        ITagMatcher *sampler()
+        {
+            return p_tagMatch;
+        }
+
+
+
 	private :
-		ROIDetector _r; /**< Region of interest detection method */
+		ROIDetector *p_roiDetect; /**< Region of interest detection method */
+		TagType *p_tagMatch;
+		FrameSet *p_fs; /**< Store a set of all frame used for this detection */
 
-		FrameSet *_fs; /**< Store a set of all frame used for this detection */
-
-		vecROI _rois; /**< Store ROIs found */
-		vecTag _tags; /**< Store tags found */
+		vecROI m_rois; /**< Store ROIs found */
+		vecTag m_tags; /**< Store tags found */
 	};
 };
 

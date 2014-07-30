@@ -34,117 +34,57 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file Exporter.hpp
-* \brief Tools for info export
+* \file HarrisCornerTagMatcher.hpp
+* \brief Tag valdiation, using hamming correction, local thresholding, and harris corner refinement
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 15 avril 2014
-* 
+* \date 13 mars 2014
+*
+* WARNING : Throw exception when tag are to close form image border (<10 pixel), this is caused by ROI build method.
 */
-#ifndef _EXPORTER_HPP_
-#define _EXPORTER_HPP_
 
-//std include
-#include <iostream>
-#include <fstream>
+#ifndef _HARRISCORNERTAGMATCHER_HPP_
+#define _HARRISCORNERTAGMATCHER_HPP_
 
-//Open CV include
-#include <opencv2/opencv.hpp>
-
-//ARAM include
+//ARAM Include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
+#include <ARAM/tag/ITagMatcher.hpp>
+#include <ARAM/tools/TagDictionnary.hpp>
+
 
 namespace aram
 {
-	/**
-	* Tools for info export
+	/** 
+	* Tag with hamming correction. After sampling in ROI, it's use dictionnary of tag to find the nearest tag (the shortest hamming distance beetween sampling and dictionnary) to determine if this ROI is a tag or not.
+	* Use otsu threshold after perspective.
+	* Use harris detection to get corner after validation
 	*/
-	class ARAM_EXPORT Exporter
+	class ARAM_EXPORT HarrisCornerTagMatcher : public ITagMatcher
 	{
 	public :
 		/**
-		* Constuctor
-		*/
-		Exporter();
-
-
-		/**
-		* Constuctor
+		* Constructor
 		*
-		* \param[in] std::string target
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
 		*/
-		Exporter(std::string target);
-
-
-		/**
-		* ++ operator overload
-		*/
-		Exporter& operator++();
-					
+		HarrisCornerTagMatcher(FrameSet *fs);
+		
 		
 		/**
-		* Save time value
+		* check tag validity
 		*
-		* \param[in] float time time value
-		* \param[in] const std::string &file file name
+		* \param[in,out] ROI *roi Region of interest to check
 		*/
-		void timer(float, const std::string &);
+		bool checkTag(ROI *roi);
 
-
-		/**
-		* Save occurence value
-		*
-		* \param[in] int occ occurence value
-		* \param[in] const std::string &file file name
-		*/
-		void occurence(int, const std::string &);
-
-
-		/**
-		* Save error value (norm)
-		*
-		* \param[in] float err error value
-		* \param[in] const std::string &file file name
-		*/
-		void error(float, const std::string &);
-
-			
-		/**
-		* Save error value (two points)
-		*
-		* \param[in] float x1
-		* \param[in] float y1
-		* \param[in] float x2
-		* \param[in] float y2
-		* \param[in] const std::string &file file name
-		*/
-		void error(float, float, float, float, const std::string &);
-				
-
-		/**
-		* Save frame in a file (.png)
-		*
-		* \param[in] const cv::Mat frame img to capture
-		* \param[in] const std::string &file file name
-		*/
-		void frame(cv::Mat &, const std::string &);
-
-
-		/**
-		* Write in a file
-		*
-		* \param[in] const std::string &text content to write
-		* \param[in] const std::string &file file name
-		*/
-		void write(const std::string &, const std::string &);
 
 	private :
-		std::string m_target; /**< Directory target */
-
-		int m_count; /** < Frame counter */
+		int m_tagSize; /**< tag size size in "bits number" (border include)*/
+		int m_scale; /**< value of perspective scale */
 	};
 };
+
 #endif

@@ -34,72 +34,54 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file .hpp
-* \brief 
+* \file NaiveContourClosing.hpp
+* \brief Contours closing by a trivial method.
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 
+* \date 24 juin 2014
 *
+* Naive closure
 */
 
-#ifndef _GRID_HPP_
-#define _GRID_HPP_
+#ifndef _NAIVECONTOURCLOSING_HPP_
+#define _NAIVECONTOURCLOSING_HPP_
 
-//openCV include
-#include <opencv2/opencv.hpp>
 
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
-
 namespace aram
 {
 	/**
-	* Information about tag in real world coordinates
+	* Naive closure inspect neighbours in a 3x3 region, and check if two contours pixels are already detected and aligned with current pixel
 	*/
-	struct ARAM_EXPORT TagInfo
+	class NaiveContourClosing
 	{
+	public:
 		/**
-		* Constructor
+		* close all hole in contours (1 pixel retrieve maximum)
 		*
-		* \param[in] int i tag id
-		* \param[in] Point2D o origin coordinate (bottom left corner)
-		* \param[in] float s size of tag (always use the same unit !)
+		* \param[in,out] binary image (CV_8U1C) to close
 		*/
-		TagInfo(int,Point2D,float);
+		void close(cv::Mat &src);
 
 
-		int id; /**< tag id */
-		float size; /**< size in user defind unit */
-		Point2D origin; /**< origin of tag in user define unit */
-	};
-
-	/**
-	* Grid, store tag info
-	*/
-	class ARAM_EXPORT Grid
-	{
-	public :
+	private:
 		/**
-		* Add a TagTnfo to grid
-		* \param[in] TagInfo t TagInfo to add
+		* check 3x3 mask
+		*
+		* 3 | 2 | 1
+		* ---------
+		* 4 | 8 | 0
+		* ---------
+		* 5 | 6 | 7
+		*
+		* \param[in] 3x3 mask (0->7) values
+		* \return true if a pixel 8 is a contour
 		*/
-		void addTagInfo(TagInfo);
-
-
-		/**
-		* Get a TagInfo by id
-		* \param[in] int id tag id to get
-		* \return TagInfo tag informations
-		*/
-		TagInfo getTagInfo(int);
-
-
-	private :
-		std::vector<TagInfo> _tags; /**< store tags infos */
+		bool checkEdge(int data[8]);
 	};
-
 };
 #endif

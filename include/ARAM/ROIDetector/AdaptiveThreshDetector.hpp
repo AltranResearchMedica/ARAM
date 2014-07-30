@@ -34,127 +34,123 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file BinaryTree.hpp
+* \file AdaptiveThreshDetector.hpp
+* \brief Edge based detection
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 01 avril 2014
+* \date 13 mars 2014
+*
+* Detect a potential tag, based on an edge finding algorithm
 *
 */
 
-#ifndef _BINARYTREE_HPP_
-#define _BINARYTREE_HPP_
-
-//std include
-#include <bitset>
+#ifndef _ADAPTIVETRESHDETECTOR_HPP_
+#define _ADAPTIVETRESHDETECTOR_HPP_
 
 //ARAM include
 #include <ARAM/export.hpp>
-#include <ARAM/typedef.hpp>
-#include <ARAM/ARAMException.hpp>
+#include <ARAM/ROIDetector/IROIDetector.hpp>
 
 //openCV include
 #include <opencv2/opencv.hpp>
 
 namespace aram
 {
-	/**
-	* Binary tree's node
+	/** 
+	* Detection of ROI based on edge finding, using Canny operator to detect contour. The same detector can be used with threshold operation to detect contour. Threshold is faster, but isn't robust against  issues.
 	*/
-	class Node
+	class ARAM_EXPORT AdaptiveThreshDetector : public IROIDetector
 	{
 	public :
-		/**
-		* Cconstructor
-		*
-		* \param[in] int node value (0/1)
-		*/
-		Node(int);
-		
-		
-		Node *_left; /**< left soon (0 branch)*/
-		Node *_right; /**< right soon (1 branch) */
-		int _value; /**< node value (0/1) */
-	};
-
-
-	/**
-	* Binary tree structure for search operations, implements pattern singleton
-	*/
-	class BinaryTree
-	{
-	public :
-		/**
-		* Search a value in tree
-		*
-		* \param[in] cv::Mat CV_8UC1 square matrix 9x9
-		* \return bool true if found
-		*/
-		bool search(cv::Mat &);
-
-
-		/**
-		* Search a value in tree
-		*
-		* \param[in] cv::Mat CV_8UC1 square matrix 9x9
-		* \param int hamming distance tolerance
-		* \return tag id if found, -1 if not
-		*/
-		int hammingSearch(cv::Mat &, int);
-		
-		
-		/**
-		* Pattern singleton implementation, return an unique instance of BinaryTree
-		*
-		* \return unique instance of BinaryTree
-		*/
-		static BinaryTree & getInstance();
-
-	private :
-		/**
-		* Insert a new value in tree
-		*
-		* \param[in] std::bitset<81> contains marker in linear form
-		*/
-		void insert(std::bitset<81>);
-
-		
-		/**
-		* Compute hamming distance between two bitset
-		*
-		* \param[in] std::bitset<81> a first bitset for comparaison
-		* \param[in] std::bitset<81> b second bitset for comparaison
-		* \return int hamming distance beetween two bitset
-		*/
-		int hammingDistance(std::bitset<81>, std::bitset<81>);
-
-		/**
-		* Build tree
-		*/
-		void read();
-		
-		
 		/**
 		* Constructor
+		*
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
 		*/
-		BinaryTree();
+		AdaptiveThreshDetector(FrameSet *fs);
 
 
 		/**
-		* Assignement operator
+		* Find roi
+		*
+		* \param[in,out] vecROI *rois vector of ROIs
 		*/
-		BinaryTree& operator=(const BinaryTree&);
+		void findROI(vecROI *rois);
+
+
+		void operator()(vecROI *rois);
 
 
 		/**
-		* Copy constructor
+		* epsilon getter
+		*
+		* \return float epsilon
 		*/
-		BinaryTree(const BinaryTree&);
+		float epsilon() const;
 
-	
-		static BinaryTree _instance; /**< unique instance of BinaryTree */
 
-		Node *_root; /**< root node, for binary tree search */
-		std::vector< std::bitset<81> > _sets; /**< bitsets storage, for hamming search */
+		/**
+		* epsilon setter
+		*
+		* \param[in] float epsilon
+		*/
+		void epsilon(float e);
+
+
+		/**
+		* blockSize getter
+		*
+		* \return int blockSize
+		*/
+		int blockSize() const;
+
+
+		/**
+		* blockSize setter
+		*
+		* \param[in] int n threshold kernel size (n x n)
+		*/
+		void blockSize(int n);
+
+
+		/**
+		* constant getter
+		*
+		* \return double constant
+		*/
+		double adaptiveConstant() const;
+
+
+		/**
+		* constant setter
+		*
+		* \param[in] double c adaptive threshold parameter (see openCV doc)
+		*/
+		void adaptiveConstant(double c);
+
+
+		/**
+		* minPerimeter getter
+		*
+		* \return double min perimeter
+		*/
+		double minPerimeter() const;
+
+
+		/**
+		* minPerimeter setter
+		*
+		* \param[in] double p minimum perimeter value to be a ROI
+		*/
+		void minPerimeter(double p);
+
+
+	private :
+		float m_epsilon; /**< approxPolyDP factor for epsilon parameter (see openCV doc) */
+		int m_blockSize; /**< Adaptive threshold kernel size */
+		double m_constant; /**< Adaptive threshold parameter (see openCV doc) */
+		double m_minPerimeter; /**< minimum perimeter value to be a ROI (trivial condition for tag detection) in pixel*/
 	};
 };
+
 #endif

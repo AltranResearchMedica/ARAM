@@ -45,10 +45,16 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _TYPEDEF_HPP_
 #define _TYPEDEF_HPP_
 
+// OpenCV include
 #include <opencv2/opencv.hpp>
+
+// std include
+#include <string>
+#include <vector>
 
 namespace aram
 {	
+	template <typename ROIDetector, typename TagType> class TagDetector;
 	class ARAMException;
 
 	class FrameSet;
@@ -56,25 +62,32 @@ namespace aram
 	//ROIs
 	class ROI;
 	class IROIDetector;
-	class EdgeDetector;
-	class LineFitting;
+	class AdaptiveThreshDetector;
+	class CannyFittingDetector;
 	
 	//Tags
-	class ITag;
-	class HammingTag;
-	class StandardTag;
+	class ITagMatcher;
+	class HammingTagMatcher;
+	class TagDictionnary;
+	class HarrisCornerTagMatcher;
+	class LocalThreshTagMatcher;
 
 	//Coordinates
 	class ICoordinate;
-	class Chessboard;
+	class MultiTag;
 
 	//Tools
-	class BinaryTree;
-	class Exporter;
-	class Extrinsics;
-	class Grid;
-	class Intrinsics;
+	class TagDictionnary;
+	class Extrinsic;
+	class Intrinsic;
+	class NaiveContourClosing;
+	class MilgramContourClosing;
 
+
+	/**
+	* ARAM main detector
+	*/
+	typedef aram::TagDetector<aram::CannyFittingDetector,aram::LocalThreshTagMatcher> ARAMDetector;
 
 	/**
 	* Line (u0,v0,x0,y0)
@@ -124,12 +137,12 @@ namespace aram
 	typedef vecPoint2D::const_iterator constIteratorPoint2D;
 
 	/**
-	* ITag* vector
+	* ROI* vector
 	*/
-	typedef std::vector<ITag*> vecTag;
+	typedef std::vector<ROI*> vecTag;
 	
 	/**
-	* Iterator on ITag* vector 
+	* Iterator on vecTag
 	*/
 	typedef vecTag::iterator iteratorTag;
 

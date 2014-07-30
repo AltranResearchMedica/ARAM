@@ -34,86 +34,69 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file LocalThreshTag.hpp
-* \brief Tag valdiation, using hamming correction, and local thresholding
+* \file Intrinsic.hpp
+* \brief Contains camera matrix and distorsion coefficients
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 13 mars 2014
-*
+* \date 10 avril 2014
+* 
 */
+#ifndef _INTRINSIC_HPP_
+#define _INTRINSIC_HPP_
 
-#ifndef _LOCALTHRESHTAG_HPP_
-#define _LOCALTHRESHTAG_HPP_
-
-//std include
-#include <string>
-
-//ARAM Include
+//ARAM include
 #include <ARAM/export.hpp>
-#include <ARAM/tag/ITag.hpp>
-#include <ARAM/tools/BinaryTree.hpp>
-
-//openCV include
-#include <opencv2/opencv.hpp>
+#include <ARAM/typedef.hpp>
+#include <ARAM/ARAMException.hpp>
 
 namespace aram
 {
-	/** 
-	* Tag with hamming correction. After sampling in ROI, it's use dictionnary of tag to find the nearest tag (the shortest hamming distance beetween sampling and dictionnary) to determine if this ROI is a tag or not.
-	* Use otsu threshold after perspective.
+	/**
+	* Contains camera matrix and distorsion coefficients
 	*/
-	class ARAM_EXPORT LocalThreshTag : public ITag
+	class ARAM_EXPORT Intrinsic
 	{
 	public :
 		/**
 		* Constructor
 		*
-		* \param[in] ROI & region of interest where is the tag
+		* \param[in] std::string file xml path file with parameters (openCV format)
 		*/
-		LocalThreshTag(ROI &);
+		Intrinsic(const std::string);
+
 		
-		
 		/**
-		* Check tag validity by sampling ROIs.
+		* Getter, called by constructor
 		*
-		* \param[in,out] vecROI *rois vector of ROIs
-		* \param[in] vecTag *tags vector of tags (always empty, useless since 0.1)
-		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
+		* \param[in] std::string file xml path file with parameters (openCV format)
 		*/
-		bool checkTag(vecROI *, vecTag *, FrameSet *);
-
-		/**
-		* Compute extrinsics parameter associeted with this tag
-		* 
-		* \param[in] Intrinsics & intrinsics parameters
-		* \param[in] float size tag size (in user define unit, for example mm)
-		* \return Extrinsics & rotation matrix
-		*/
-		Extrinsics extrinsics(Intrinsics &, float);
+		void load(const std::string);
 
 
 		/**
-		* Unique id for this marker
+		* Getter
 		*
-		* \return int id of this marker
+		* \return cv::Mat & camera matrix
 		*/
-		int id();
+		const cv::Mat & cameraMatrix();
 
 
+		/**
+		* Getter
+		*
+		* \return cv::Mat & distorsion coefficients
+		*/
+		const cv::Mat & distorsionCoefficient();
+
+
+		/**
+		* \return bool true if camera matrix and distortion coefficients are filled
+		*/
+		bool valid() const;
 
 	private :
-		/**
-		* Rotate CV_8UC1 matrix (clock wise)
-		*
-		* \param[in] cv::Mat & matrix to rotate, contains  
-		* \param[out] cv::Mat & matrix after rotations  
-		*/
-		void rotate(cv::Mat &, cv::Mat &);
-
-		int _tagSize; /**< tag size size in "bits number" (border include)*/
-		int _scale; /**< value of perspective scale */
-
-		int _id; /**< Tag id */
+		cv::Mat m_cameraMatrix; /**< camera matrix coefficients */ 
+		cv::Mat m_distorsionCoefficient; /**<distorsion coefficients */
 	};
 };
 

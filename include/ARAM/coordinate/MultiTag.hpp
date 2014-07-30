@@ -34,55 +34,90 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file EdgeDetector.hpp
-* \brief Edge based detection
+* \file MultiTag.hpp
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 13 mars 2014
-*
-* Detect a potential tag, based on an edge finding algorithm
+* \date 11 avril 2014
 *
 */
 
-#ifndef _EDGEDETECTOR_HPP_
-#define _EDGEDETECTOR_HPP_
-
-//ARAM include
-#include <ARAM/export.hpp>
-#include <ARAM/ROIDetector/IROIDetector.hpp>
+#ifndef _MULTITAG_HPP_
+#define _MULTITAG_HPP_
 
 //openCV include
 #include <opencv2/opencv.hpp>
 
+//ARAM include
+#include <ARAM/export.hpp>
+#include <ARAM/typedef.hpp>
+#include <ARAM/ARAMException.hpp>
+
+#include <ARAM/coordinate/ICoordinate.hpp>
+
+
 namespace aram
 {
-	/** 
-	* Detection of ROI based on edge finding, using Canny operator to detect contour. The same detector can be used with threshold operation to detect contour. Threshold is faster, but isn't robust against  issues.
+	/**
+	* Information about tag in real world coordinates
 	*/
-	class ARAM_EXPORT EdgeDetector : public IROIDetector
+	struct ARAM_EXPORT TagInfo
+	{
+		/**
+		* Constructor
+		*
+		* \param[in] int i tag id
+		* \param[in] Point2D o origin coordinate (bottom left corner)
+		* \param[in] float s size of tag (always use the same unit !)
+		*/
+		TagInfo(int,Point2D,float);
+
+
+		int id; /**< tag id */
+		float size; /**< size in user defind unit */
+		Point2D origin; /**< origin of tag in user define unit */
+	};
+
+
+	/*
+	* Compute extrinsics parameters using a grid of tags
+	* This method is efficient to deal with occlusion problems.
+	By using tags with kowned positions in real world coordinates, you can compute other tags position by knowing only one of them, and then compute camera pose.
+	*/
+	class ARAM_EXPORT MultiTag : public ICoordinate
 	{
 	public :
 		/**
 		* Constructor
 		*/
-		EdgeDetector();
+		MultiTag();
+		
+		/**
+		* Compute extrinsics parameters and reprojection error
+		* 
+		* \param[in] iteratorTag begin iterator on begin of valid tag list
+		* \param[in] iteratorTag end iterator on end of valid tag list
+		* \param[in] Intrinsic intr Intrinsic parameters
+		* \return Extrinsic extrinsics parameters
+		*/
+		Extrinsic compute(iteratorTag, iteratorTag, Intrinsic);
+
+		/**
+		* Add a TagTnfo to MultiTag
+		* \param[in] TagInfo t TagInfo to add
+		*/
+		void addTagInfo(TagInfo);
 
 
 		/**
-		* Find roi
-		*
-		* \param[in,out] vecROI *rois vector of ROIs
-		* \param[in] vecTag *tags vector of tags (always empty, useless since 0.1)
-		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
+		* Get a TagInfo by id
+		* \param[in] int id tag id to get
+		* \return TagInfo tag informations
 		*/
-		void findROI(vecROI *, vecTag *, FrameSet *);
+		TagInfo getTagInfo(int);
 
-
+		
 	private :
-		float _factEpsilon; /**< approxPolyDP factor for epsilon parameter (see openCV doc) */
-		int _blockSize; /**< Adaptive threshold kernel size */
-		double _constant; /**< Adaptibve threshold parameter (see openCV doc) */
-		double _minPerimeter; /**< minimum perimeter value to be a ROI (trivial condition for tag detection) in pixel*/
+		std::vector<TagInfo> _tags; /**<  store information abaout tags position in real world coordinates */
 	};
 };
 

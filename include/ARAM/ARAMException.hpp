@@ -49,12 +49,12 @@ namespace aram
 		const char* what() const throw();
 
 	private :
-		int _line; /**< line number */
-		std::string _file; /**< file name */
-		std::string _func; /**< function name */
-		std::string _msg; /**< exception value */
+		int m_line; /**< line number */
+		std::string m_file; /**< file name */
+		std::string m_func; /**< function name */
+		std::string m_msg; /**< exception value */
 
-		std::string _res; /**< string to return */
+		std::string m_res; /**< string to return */
 	};
 };
 

@@ -34,59 +34,89 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file Chessboard.hpp
+* \file ITagMatcher.hpp
+* \brief Interface for tag, determine if potential tag is or not a tag
 * \author Alexandre Kornmann
 * \version 1.0
-* \date 11 avril 2014
+* \date 13 mars 2014
 *
 */
 
-#ifndef _CHESSBOARD_HPP_
-#define _CHESSBOARD_HPP_
-
-//openCV include
-#include <opencv2/opencv.hpp>
+#ifndef _ITAGMATCHER_HPP_
+#define _ITAGMATCHER_HPP_
 
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
-#include <ARAM/tools/Grid.hpp>
-#include <ARAM/coordinate/ICoordinate.hpp>
+#include <ARAM/FrameSet.hpp>
+#include <ARAM/ROIDetector/ROI.hpp>
+#include <ARAM/tools/Extrinsic.hpp>
+#include <ARAM/tools/Intrinsic.hpp>
 
 
 namespace aram
 {
-	/*
-	* Compute extrinsics parameters using a grid of tags
-	* This method is efficient to deal with occlusion problems.
-	By using tags with kowned positions in real world coordinates, you can compute other tags position by knowing only one of them, and then compute camera pose.
+	/** 
+	* Interface for tag, determine if potential tag is or not a tag
 	*/
-	class ARAM_EXPORT Chessboard : public ICoordinate
+	class ARAM_EXPORT ITagMatcher
 	{
 	public :
 		/**
-		* Take a grid og tag to compute extrinsics parameters
+		* Constructor
 		*
-		* \param[in] Grid g contains all information on tag position in real world
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
 		*/
-		Chessboard(Grid);
+		ITagMatcher(FrameSet *fs);
+		
+
+		/**
+		* check tag validity
+		*
+		* \param[in,out] ROI *roi Region of interest to check
+		*/
+		virtual bool checkTag(ROI *roi)=0;
+
+
+	protected : 
+		/**
+		* Save a frame
+		* \param[in] std::string name unique name to store a frame
+		* \param[in] const cv::Mat &mat frame to store
+		*/
+		void save(std::string name, cv::Mat &mat);
+
 		
 		/**
-		* Compute extrinsics parameters and reprojection error
-		* 
-		* \param[in] iteratorTag begin iterator on begin of valid tag list
-		* \param[in] iteratorTag end iterator on end of valid tag list
-		* \param[in] Intrinsics intr Intrinsics parameters
-		* \return Extrinsics extrinsics parameters
+		* Load a frame, throw ARAMException if this frame doesn't exist
+		* \param[in] std::string name unique name to load
 		*/
-		Extrinsics compute(iteratorTag, iteratorTag, Intrinsics);
-		
-	private :
-		Grid _grid; /**< Grid store information abaout tags position in real world coordinates */
-	};
+		cv::Mat & load(std::string name);
 
+	
+		/**
+		* Test if a frame name is used
+		* \param[in] std::string name frame name
+		* \return bool true if name is found
+		*/
+		bool exist(std::string name);
+		
+		
+		/**
+		* Rotate CV_8UC1 matrix (clock wise)
+		*
+		* \param[in] cv::Mat & matrix to rotate  
+		* \param[out] cv::Mat & matrix after rotation
+		*/
+		void rotate(cv::Mat &, cv::Mat &);
+
+
+	private :
+		FrameSet *p_fs; /** < FrameSet contains all current frame created by the library */
+	};
 };
 
 #endif
+

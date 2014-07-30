@@ -34,93 +34,53 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 /**
 *
-* \file HarrisCornerTag.hpp
-* \brief Tag valdiation, using hamming correction, local thresholding, and harris corner refinement
+* \file HammingTagMatcher.hpp
+* \brief Hamming tag
 * \author Alexandre Kornmann
 * \version 1.0
 * \date 13 mars 2014
 *
-* WARNING : Throw exception when tag are to close form image border (<10 pixel), this is caused by ROI build method.
 */
 
-#ifndef _HARRISCORNERTAG_HPP_
-#define _HARRISCORNERTAG_HPP_
-
-//std include
-#include <string>
+#ifndef _HAMMINGTAGMATCHER_HPP_
+#define _HAMMINGTAGMATCHER_HPP_
 
 //ARAM Include
 #include <ARAM/export.hpp>
-#include <ARAM/tag/ITag.hpp>
-#include <ARAM/tools/BinaryTree.hpp>
+#include <ARAM/typedef.hpp>
+#include <ARAM/ARAMException.hpp>
 
-//openCV include
-#include <opencv2/opencv.hpp>
+#include <ARAM/tag/ITagMatcher.hpp>
+#include <ARAM/tools/TagDictionnary.hpp>
 
 namespace aram
 {
 	/** 
 	* Tag with hamming correction. After sampling in ROI, it's use dictionnary of tag to find the nearest tag (the shortest hamming distance beetween sampling and dictionnary) to determine if this ROI is a tag or not.
-	* Use otsu threshold after perspective.
-	* Use harris detection to get corner after validation
+	* Use adaptative threshold before sampling.
 	*/
-	class ARAM_EXPORT HarrisCornerTag : public ITag
+	class ARAM_EXPORT HammingTagMatcher : public ITagMatcher
 	{
 	public :
 		/**
 		* Constructor
 		*
-		* \param[in] ROI & region of interest where is the tag
+		* \param[in] FrameSet *fs FrameSet contains all current frame created by the library
 		*/
-		HarrisCornerTag(ROI &);
+		HammingTagMatcher(FrameSet *fs);
 		
 		
 		/**
-		* Check tag validity by sampling ROIs.
+		* check tag validity
 		*
-		* \param[in,out] vecROI *rois vector of ROIs
-		* \param[in] vecTag *tags vector of tags (always empty, useless since 0.1)
-		* \param[in] FrameSet *fs set of frame, contains currentFrame (call fs->load("currentFrame"); to get the current frame), you can use this set to store results of operations like threshold, canny, ... 
+		* \param[in,out] ROI *roi Region of interest to check
 		*/
-		bool checkTag(vecROI *, vecTag *, FrameSet *);
-
-		/**
-		* Compute extrinsics parameter associeted with this tag
-		* 
-		* \param[in] Intrinsics & intrinsics parameters
-		* \param[in] float size tag size (in user define unit, for example mm)
-		* \return Extrinsics & rotation matrix
-		*/
-		Extrinsics extrinsics(Intrinsics &, float);
-
-
-		/**
-		* Unique id for this marker
-		*
-		* \return int id of this marker
-		*/
-		int id();
-
+		bool checkTag(ROI *roi);
 
 
 	private :
-		/**
-		* Rotate CV_8UC1 matrix (clock wise)
-		*
-		* \param[in] cv::Mat & matrix to rotate, contains  
-		* \param[out] cv::Mat & matrix after rotations  
-		*/
-		void rotate(cv::Mat &, cv::Mat &);
-
-		/**
-		* use harris method to refine corner 
-		*/
-		void harrisCorner(FrameSet *fs);
-
-		int _tagSize; /**< tag size size in "bits number" (border include)*/
-		int _scale; /**< value of perspective scale */
-
-		int _id; /**< Tag id */
+		int m_tagSize; /**< tag size size in "bits number" (border include)*/
+		int m_scale; /**< value of perspective scale */
 	};
 };
 

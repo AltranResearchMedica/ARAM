@@ -45,12 +45,12 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _FRAMESET_HPP_
 #define _FRAMESET_HPP_
 
-//ARAM include
+// ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
 #include <ARAM/ARAMException.hpp>
 
-//openCV include
+// OpenCV include
 #include <opencv2/core/core.hpp>
 
 namespace aram
@@ -67,14 +67,14 @@ namespace aram
 		* \param[in] std::string name unique name to store a frame
 		* \param[in] const cv::Mat &mat frame to store
 		*/
-		void save(std::string, const cv::Mat &);
+		void save(std::string name, const cv::Mat &mat);
 		
 
 		/**
 		* load a frame, throw ARAMException if this frame doesn't exist
 		* \param[in] std::string name unique name to load
 		*/
-		cv::Mat load(std::string);
+		cv::Mat & load(std::string name);
 
 		/**
 		* reset content of map
@@ -86,7 +86,7 @@ namespace aram
 		* \param[in] std::string name frame name
 		* \return bool true if name is found
 		*/
-		bool exist(std::string);
+		bool exist(std::string name);
 		
 		
 		/**
@@ -103,7 +103,7 @@ namespace aram
 		iteratorFrameSet end();
 
 	private :
-		std::map<std::string,cv::Mat> _frameMap; /**< map to store (name,frame) */
+		std::map<std::string,cv::Mat> m_frameMap; /**< map to store (name,frame) */
 	};
 };
 #endif

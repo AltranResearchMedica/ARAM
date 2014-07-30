@@ -1,10 +1,11 @@
 #include <ARAM/TagDetector.hpp> // Main ARAM class
-#include <ARAM/tag/LocalThreshTag.hpp> // Tag validator
-#include <ARAM/ROIDetector/LineFitting.hpp> // Region of interest detection
+#include <ARAM/tag/HammingTagMatcher.hpp> // Tag validator
+#include <ARAM/ROIDetector/CannyFittingDetector.hpp> // Region of interest detection
 
 #include <opencv2/opencv.hpp> // OpenCV data structure
 
 #include <exception> //std::exception
+
 
 int main(int argc, char** argv)
 {
@@ -13,13 +14,13 @@ int main(int argc, char** argv)
 		// Detection parameters :
 		// -> Region of interest detection
 		// -> Tag validator
-		typedef aram::TagDetector<aram::LineFitting,aram::LocalThreshTag> myDetector;
+		typedef aram::TagDetector<aram::CannyFittingDetector,aram::HammingTagMatcher> myDetector;
 		
 		// Tag detector instanciation
 		myDetector *detector = new myDetector();
 		
 		// Intrinsics parameters
-		aram::Intrinsics intr("C:\\camera_data.xml");
+		aram::Intrinsic intr("C:\\camera_data.xml");
 		
 		// Video input (see openCV doc)
 		
