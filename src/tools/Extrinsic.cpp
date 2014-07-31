@@ -33,7 +33,7 @@ namespace aram
 		m_imgPts = iP;
 
 		// WARNING : Flag CV_P3P and CV_EPNP return unstable results
-		cv::solvePnP(m_objPts, m_imgPts, m_intr.cameraMatrix(), m_intr.distorsionCoefficient(), m_rvec, m_tvec, false, CV_ITERATIVE);
+		cv::solvePnP(m_objPts, m_imgPts, m_intr.cameraMatrix(), m_intr.distorsionCoefficient(), m_rvec, m_tvec, false);
 
 		cv::Rodrigues(m_rvec,m_rmat);
 	}

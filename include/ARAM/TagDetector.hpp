@@ -142,7 +142,7 @@ namespace aram
 		*/
 		vecROI * ROI() const
 		{
-			return &p_roiDetectois;
+			return &m_rois;
 		}
 
 
