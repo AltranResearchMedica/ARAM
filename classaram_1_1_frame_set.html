@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,19 +100,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8182966ad26e431d44df405bbab520d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#a8182966ad26e431d44df405bbab520d7">save</a> (std::string, const cv::Mat &amp;)</td></tr>
-<tr class="separator:a8182966ad26e431d44df405bbab520d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcf2617705689ccea8f3e670e8bf69cb"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#afcf2617705689ccea8f3e670e8bf69cb">load</a> (std::string)</td></tr>
-<tr class="separator:afcf2617705689ccea8f3e670e8bf69cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e19aff159ffd9e9b78a3e5c4968cc82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#a1e19aff159ffd9e9b78a3e5c4968cc82">save</a> (std::string name, const cv::Mat &amp;mat)</td></tr>
+<tr class="separator:a1e19aff159ffd9e9b78a3e5c4968cc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3c4595b4d0461f9ea3ae73049f29a82"><td class="memItemLeft" align="right" valign="top">cv::Mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#af3c4595b4d0461f9ea3ae73049f29a82">load</a> (std::string name)</td></tr>
+<tr class="separator:af3c4595b4d0461f9ea3ae73049f29a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b9f7d5aadf5784268d9b84bda4d1e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#a13b9f7d5aadf5784268d9b84bda4d1e6">reset</a> ()</td></tr>
 <tr class="separator:a13b9f7d5aadf5784268d9b84bda4d1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a862a68e910539d6251c0e81155b996da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#a862a68e910539d6251c0e81155b996da">exist</a> (std::string)</td></tr>
-<tr class="separator:a862a68e910539d6251c0e81155b996da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d60689b8fa5de61ea66b09a238c52f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#a86d60689b8fa5de61ea66b09a238c52f">exist</a> (std::string name)</td></tr>
+<tr class="separator:a86d60689b8fa5de61ea66b09a238c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe5ddfe4b0dd119f083449df6ccbb384"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacearam.html#ae48f7f0e5b3ed9784e3f4bfefd96eea4">iteratorFrameSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#afe5ddfe4b0dd119f083449df6ccbb384">begin</a> ()</td></tr>
+<tr class="separator:afe5ddfe4b0dd119f083449df6ccbb384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9e5383a2eab5a856f99ef0d0c1f422"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacearam.html#ae48f7f0e5b3ed9784e3f4bfefd96eea4">iteratorFrameSet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_frame_set.html#acf9e5383a2eab5a856f99ef0d0c1f422">end</a> ()</td></tr>
+<tr class="separator:acf9e5383a2eab5a856f99ef0d0c1f422"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Set of frame, handle memory about frame, and store frame after processing like canny, threshold, ... You can use this to store your result, and avoid to do the same computation twice </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a862a68e910539d6251c0e81155b996da"></a>
+<a class="anchor" id="afe5ddfe4b0dd119f083449df6ccbb384"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacearam.html#ae48f7f0e5b3ed9784e3f4bfefd96eea4">iteratorFrameSet</a> aram::FrameSet::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>begin of map set </p>
+<dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string,cv::Mat&gt;::iterator begin </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acf9e5383a2eab5a856f99ef0d0c1f422"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacearam.html#ae48f7f0e5b3ed9784e3f4bfefd96eea4">iteratorFrameSet</a> aram::FrameSet::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>end of map set </p>
+<dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string,cv::Mat&gt;::iterator end </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a86d60689b8fa5de61ea66b09a238c52f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -134,12 +174,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afcf2617705689ccea8f3e670e8bf69cb"></a>
+<a class="anchor" id="af3c4595b4d0461f9ea3ae73049f29a82"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Mat aram::FrameSet::load </td>
+          <td class="memname">cv::Mat &amp; aram::FrameSet::load </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -173,7 +213,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8182966ad26e431d44df405bbab520d7"></a>
+<a class="anchor" id="a1e19aff159ffd9e9b78a3e5c4968cc82"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -208,13 +248,13 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Tracking/ARAM/include/ARAM/<a class="el" href="_frame_set_8hpp_source.html">FrameSet.hpp</a></li>
-<li>C:/Tracking/ARAM/src/FrameSet.cpp</li>
+<li>include/ARAM/<a class="el" href="_frame_set_8hpp_source.html">FrameSet.hpp</a></li>
+<li>src/FrameSet.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:17 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

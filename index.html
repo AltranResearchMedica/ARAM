@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -64,7 +66,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -78,10 +80,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ARAM Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><h2>ARAM: Augmented Reality for Application on Medical field library </h2>
+<p>ARAM is a C++ library for Augmented Reality on Medical Applications based on the extraction and identification of fiducial markers in real time. Based on Opencv, several technologies and approaches are combined to resolve the various problems related to the accuracy, robustness and occlusions. This library is provided under BSD license.</p>
+<h1>Introduction</h1>
+<p>The library deals with the identification of markers in the presence of occlusions without sacrificing the accuracy of the pose camera estimation. These markers are generated using Hamming Code with error correction. In order to assess the accuracy of pose estimation, specifically when high levels of accuracy are required on medical field, it is mandatory to carry out a thorough analysis of the errors occurring in the whole process. Consequently, this library deals with the performance analysis of the 3D pose estimation. The suggested analysis focuses on the error estimation affecting the edge detection process.</p>
+<h1>Description</h1>
+<p>The image processing software performs real-time 3D camera pose estimation. Firstly, the camera is carefully calibrated off-line. The extraction of edge information is the first fundamental processing step of the whole pose estimation procedure. The edge or contour point detection relies on well-known gradient-based methods. Following contour point extraction, chains of contour points are determined to form possibly closed contours. This latter are then reduced to a minimal number of vertices according to a specified tolerance. Finally, only the polygons containing the “good” marker are selected to compute the camera pose.</p>
+<p>The processing steps of AR marker detection procedure can be summarized as follows:</p>
+<ul>
+<li>Calibration of the camera (offline),</li>
+<li>Segmentation of the acquired image and determination of contour point lists,</li>
+<li>Classification of the edge point lists (Edge linking),</li>
+<li>Polyline Simplification (Iterative Endpoint Fit)</li>
+<li>Image Sampling</li>
+<li>Pose estimation using the calibration parameters.</li>
+</ul>
+<h1>Main class</h1>
+<p>The library main classes are divided as following:</p>
+<ul>
+<li>aram::TagDetector&lt;TagType,ROIDetector&gt; : main aram class, used to detect tags in a frame.</li>
+<li><a class="el" href="classaram_1_1_i_r_o_i_detector.html">aram::IROIDetector</a> : Interface for ROI Detection</li>
+<li><a class="el" href="classaram_1_1_canny_fitting_detector.html">aram::CannyFittingDetector</a> : currently best IROIDetector implementation</li>
+<li><a class="el" href="classaram_1_1_adaptive_thresh_detector.html">aram::AdaptiveThreshDetector</a> : another IROIDetector implementation</li>
+<li><a class="el" href="classaram_1_1_i_tag_matcher.html">aram::ITagMatcher</a> : Interface for Tag validation</li>
+<li><a class="el" href="classaram_1_1_local_thresh_tag_matcher.html">aram::LocalThreshTagMatcher</a> : currently best ITagMatcher implementation</li>
+<li>aram::Intrinscic : store camera intrinsic parameters</li>
+<li><a class="el" href="classaram_1_1_extrinsic.html">aram::Extrinsic</a> : compute extrinsic parameters</li>
+<li><a class="el" href="classaram_1_1_i_coordinate.html">aram::ICoordinate</a> : compute extrinsics parameters, using one or more tags</li>
+<li><a class="el" href="classaram_1_1_multi_tag.html">aram::MultiTag</a> : currently best ICoordinate implementation</li>
+</ul>
+<h1>Compile</h1>
+<h2>Requirements</h2>
+<ul>
+<li>OpenCv &gt;= 2.4.8</li>
+<li>CMake &gt;= 2.8</li>
+</ul>
+<h2>Compiler</h2>
+<p>Tested with Microsoft Visual C++ (Express Edition 2010) and gcc 4.6.3</p>
+<ul>
+<li>Use CMake to generate the solution (.sln or makefile)</li>
+<li>Compile</li>
+</ul>
+<h1>Samples</h1>
+<h2>camera_data.xml &amp; record.avi</h2>
+<p>A video, with correct calibration camera, to test samples if you don't have a camera</p>
+<h2>FirstApp</h2>
+<ul>
+<li>Check CMakeLists.txt ''' include_directories("C:/Tracking/ARAM/include") link_directories("C:/Tracking/ARAM/build/lib/Debug") '''</li>
+<li>Use CMake to generate the solution (.sln or makefile)</li>
+<li>Compile</li>
+</ul>
+<p>FirstApp circle corners of "good" tag.</p>
+<h2>MultiTracking</h2>
+<ul>
+<li>Check CMakeLists.txt ''' include_directories("C:/Tracking/ARAM/include") link_directories("C:/Tracking/ARAM/build/lib/Debug") '''</li>
+<li>Use CMake to generate the solution (.sln or makefile)</li>
+<li>Compile</li>
+</ul>
+<p>MultiTracking use ARAM abilities to track a chessboard of tag.</p>
+<hr/>
+ <h1>Acknowledgment</h1>
+<p>This work is contributed by Alexandre KORNMANN in the framework of his final project assignment in Altran Research Medic@ under the responsibility of Dr. Abdelkrim BELHAOUA. Altran Research Medic@ is research program aimed to integrate innovative augmented reality technology in order to improve the medical operating services. </p>
+<hr/>
+ <h1>Contact</h1>
+<p>Please report any bugs, comment about error and/or suggest enhancements to <a href="#" onclick="location.href='mai'+'lto:'+'sup'+'po'+'rt-'+'me'+'dic'+'a@'+'alt'+'ra'+'n.c'+'om'; return false;">suppo<span style="display: none;">.nosp@m.</span>rt-m<span style="display: none;">.nosp@m.</span>edica<span style="display: none;">.nosp@m.</span>@alt<span style="display: none;">.nosp@m.</span>ran.c<span style="display: none;">.nosp@m.</span>om</a> </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:20 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

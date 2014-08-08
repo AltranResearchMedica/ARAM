@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['point2d',['Point2D',['../namespacearam.html#a2e4bfd20bae93a86b2164f2c4fa94901',1,'aram']]],
-  ['point3d',['Point3D',['../namespacearam.html#a33193ab5ea96482067476613b7aad426',1,'aram']]]
+  ['iteratorframeset',['iteratorFrameSet',['../namespacearam.html#ae48f7f0e5b3ed9784e3f4bfefd96eea4',1,'aram']]],
+  ['iteratorpoint2d',['iteratorPoint2D',['../namespacearam.html#aa54cf469919db62520293a9146464fdd',1,'aram']]],
+  ['iteratorpoint3d',['iteratorPoint3D',['../namespacearam.html#a49fc755d67f5a036e9ac9a525b2e413a',1,'aram']]],
+  ['iteratorroi',['iteratorROI',['../namespacearam.html#a4708aa025d770bf51f08f2883bad3cba',1,'aram']]],
+  ['iteratortag',['iteratorTag',['../namespacearam.html#a96433fb89f254570ddab504e6de2322d',1,'aram']]]
 ];

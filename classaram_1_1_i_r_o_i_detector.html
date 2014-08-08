@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classaram_1_1_i_r_o_i_detector-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">aram::IROIDetector Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -101,19 +104,89 @@ Inheritance diagram for aram::IROIDetector:</div>
  <div class="center">
   <img src="classaram_1_1_i_r_o_i_detector.png" usemap="#aram::IROIDetector_map" alt=""/>
   <map id="aram::IROIDetector_map" name="aram::IROIDetector_map">
-<area href="classaram_1_1_edge_detector.html" alt="aram::EdgeDetector" shape="rect" coords="0,56,123,80"/>
+<area href="classaram_1_1_adaptive_thresh_detector.html" alt="aram::AdaptiveThreshDetector" shape="rect" coords="0,56,191,80"/>
+<area href="classaram_1_1_auto_canny_detector.html" alt="aram::AutoCannyDetector" shape="rect" coords="201,56,392,80"/>
+<area href="classaram_1_1_canny_fitting_detector.html" alt="aram::CannyFittingDetector" shape="rect" coords="402,56,593,80"/>
+<area href="classaram_1_1_otsu_canny_fitting_detector.html" alt="aram::OtsuCannyFittingDetector" shape="rect" coords="603,56,794,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56353eab77dd334714f8de7cd6a7443f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#a56353eab77dd334714f8de7cd6a7443f">findROI</a> (<a class="el" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> *, <a class="el" href="namespacearam.html#a1b463d4fe9fe532590831b7e2e753056">vecTag</a> *, <a class="el" href="classaram_1_1_frame_set.html">FrameSet</a> *)=0</td></tr>
-<tr class="separator:a56353eab77dd334714f8de7cd6a7443f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ff06906e174eb11683595521137069"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#a30ff06906e174eb11683595521137069">IROIDetector</a> (<a class="el" href="classaram_1_1_frame_set.html">FrameSet</a> *fs)</td></tr>
+<tr class="separator:a30ff06906e174eb11683595521137069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f2e265484e0874441e3187aa036fd5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#a48f2e265484e0874441e3187aa036fd5">findROI</a> (<a class="el" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> *rois)=0</td></tr>
+<tr class="separator:a48f2e265484e0874441e3187aa036fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:af7ac46c3f352af9c4a35e3abe78a6f16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#af7ac46c3f352af9c4a35e3abe78a6f16">save</a> (std::string name, cv::Mat &amp;mat)</td></tr>
+<tr class="separator:af7ac46c3f352af9c4a35e3abe78a6f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05c856ff203c4a7ea14c7e9a47f45f7"><td class="memItemLeft" align="right" valign="top">cv::Mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#ae05c856ff203c4a7ea14c7e9a47f45f7">load</a> (std::string name)</td></tr>
+<tr class="separator:ae05c856ff203c4a7ea14c7e9a47f45f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c739cb3e5307fea4eb6a7452fe8c3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaram_1_1_i_r_o_i_detector.html#a51c739cb3e5307fea4eb6a7452fe8c3b">exist</a> (std::string name)</td></tr>
+<tr class="separator:a51c739cb3e5307fea4eb6a7452fe8c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for region of interest (<a class="el" href="classaram_1_1_r_o_i.html">ROI</a>) detection </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a56353eab77dd334714f8de7cd6a7443f"></a>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a30ff06906e174eb11683595521137069"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">aram::IROIDetector::IROIDetector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classaram_1_1_frame_set.html">FrameSet</a> *&#160;</td>
+          <td class="paramname"><em>fs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname"><a class="el" href="classaram_1_1_frame_set.html">FrameSet</a></td><td>*fs <a class="el" href="classaram_1_1_frame_set.html">FrameSet</a> contains all current frame created by the library </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a51c739cb3e5307fea4eb6a7452fe8c3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool aram::IROIDetector::exist </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Test if a frame name is used </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">std::string</td><td>name frame name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool true if name is found </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a48f2e265484e0874441e3187aa036fd5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -124,24 +197,8 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual void aram::IROIDetector::findROI </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>rois</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacearam.html#a1b463d4fe9fe532590831b7e2e753056">vecTag</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classaram_1_1_frame_set.html">FrameSet</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -160,17 +217,91 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classaram_1_1_edge_detector.html#a25632acd48b2c0f3933a514030839ead">aram::EdgeDetector</a>.</p>
+<p>Implemented in <a class="el" href="classaram_1_1_auto_canny_detector.html#ae6e4b6d4ff8169d3c6bff06b85489665">aram::AutoCannyDetector</a>, <a class="el" href="classaram_1_1_canny_fitting_detector.html#a2d5d0df9a97b21220ab8a56c7e3a42be">aram::CannyFittingDetector</a>, <a class="el" href="classaram_1_1_otsu_canny_fitting_detector.html#a8d9a8408ebe397aad85e4ec977c3281c">aram::OtsuCannyFittingDetector</a>, and <a class="el" href="classaram_1_1_adaptive_thresh_detector.html#a9e9a027348f08cd0131cac157fe356c5">aram::AdaptiveThreshDetector</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Tracking/ARAM/include/ARAM/ROIDetector/<a class="el" href="_i_r_o_i_detector_8hpp_source.html">IROIDetector.hpp</a></li>
+<a class="anchor" id="ae05c856ff203c4a7ea14c7e9a47f45f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat &amp; aram::IROIDetector::load </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Load a frame, throw <a class="el" href="classaram_1_1_a_r_a_m_exception.html">ARAMException</a> if this frame doesn't exist </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">std::string</td><td>name unique name to load </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af7ac46c3f352af9c4a35e3abe78a6f16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void aram::IROIDetector::save </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Save a frame </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">std::string</td><td>name unique name to store a frame </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">const</td><td>cv::Mat &amp;mat frame to store </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>include/ARAM/ROIDetector/<a class="el" href="_i_r_o_i_detector_8hpp_source.html">IROIDetector.hpp</a></li>
+<li>src/ROIDetector/IROIDetector.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:18 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

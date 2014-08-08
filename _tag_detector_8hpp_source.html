@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>ARAM: C:/Tracking/ARAM/include/ARAM/TagDetector.hpp Source File</title>
+<title>ARAM: include/ARAM/TagDetector.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_eb6935ee1c183a69f74c38b3cbcda078.html">Tracking</a></li><li class="navelem"><a class="el" href="dir_e8a34f451738af8deac86e38875c72f7.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,158 +93,159 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef _TAGDETECTOR_HPP_</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _TAGDETECTOR_HPP_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//std include </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ios&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//ARAM include</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="export_8hpp.html">ARAM/export.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="typedef_8hpp.html">ARAM/typedef.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_a_r_a_m_exception_8hpp.html">ARAM/ARAMException.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_frame_set_8hpp.html">ARAM/FrameSet.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_r_o_i_detector_8hpp.html">ARAM/ROIDetector/IROIDetector.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_tag_8hpp.html">ARAM/tag/ITag.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//ARAM include</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="export_8hpp.html">ARAM/export.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="typedef_8hpp.html">ARAM/typedef.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_a_r_a_m_exception_8hpp.html">ARAM/ARAMException.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_frame_set_8hpp.html">ARAM/FrameSet.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_r_o_i_detector_8hpp.html">ARAM/ROIDetector/IROIDetector.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_tag_matcher_8hpp.html">ARAM/tag/ITagMatcher.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>aram</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{       </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ROIDetector, <span class="keyword">typename</span> TagType&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html">   29</a></span>&#160;    <span class="keyword">class </span>ARAM_EXPORT <a class="code" href="classaram_1_1_tag_detector.html">TagDetector</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_exporter_8hpp.html">ARAM/tools/Exporter.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//openCV include</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>aram</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{       </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ROIDetector, <span class="keyword">typename</span> TagType&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html">   43</a></span>&#160;    <span class="keyword">class </span>ARAM_EXPORT <a class="code" href="classaram_1_1_tag_detector.html">TagDetector</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span> :        </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">   51</a></span>&#160;        <a class="code" href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">TagDetector</a>():</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        _r(ROIDetector()),</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        _fs(new <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a>())</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            reset();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">public</span> :        </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">   37</a></span>&#160;        <a class="code" href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">TagDetector</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            p_fs = <span class="keyword">new</span> <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            p_roiDetect = <span class="keyword">new</span> ROIDetector(p_fs);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            p_tagMatch = <span class="keyword">new</span> TagType(p_fs);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            reset();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">   50</a></span>&#160;        <a class="code" href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">~TagDetector</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            reset();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">delete</span> p_tagMatch;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">delete</span> p_roiDetect;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">delete</span> p_fs;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">   63</a></span>&#160;        <a class="code" href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">~TagDetector</a>()</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            reset();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">   72</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">reset</a>()</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">iteratorTag</a> itTag;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">iteratorROI</a> itRoi;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span>(itRoi=_rois.begin();itRoi!=_rois.end();++itRoi)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keyword">delete</span> *itRoi;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            _rois.clear();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">for</span>(itTag=_tags.begin();itTag!=_tags.end();++itTag)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keyword">delete</span> *itTag;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            _tags.clear();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">   62</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">reset</a>()</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// clean ROIs</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">iteratorROI</a> itRoi;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">for</span>(itRoi=m_rois.begin();itRoi!=m_rois.end();++itRoi)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">delete</span> *itRoi;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            m_rois.clear();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">// clean tags</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// do not release tag vector content, because it&#39;s already done with roi</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            m_tags.clear();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// clean frameSet</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            p_fs-&gt;reset();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">   86</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">detect</a>(<span class="keyword">const</span> cv::Mat &amp;frame)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            reset();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            _fs-&gt;reset();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">// current frame copy</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            p_fs-&gt;save(<span class="stringliteral">&quot;currentFrame&quot;</span>,frame);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">   99</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">detect</a>(<span class="keyword">const</span> cv::Mat &amp;frame)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            reset();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// ROI detection</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            p_roiDetect-&gt;findROI(&amp;m_rois);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">// Tag computing</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">iteratorROI</a> it;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">for</span>(it=m_rois.begin();it!=m_rois.end();++it)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">if</span>(p_tagMatch-&gt;checkTag(*it)) m_tags.push_back(*it);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">float</span> freq = (float) cv::getTickFrequency()/1000.0f;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            int64 globaltimer, tagstimer, roistimer;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            globaltimer = cv::getTickCount();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">// current frame copy</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            _fs-&gt;save(<span class="stringliteral">&quot;currentFrame&quot;</span>,frame);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            roistimer = cv::getTickCount();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">// ROI detection</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            _r.findROI(&amp;_rois,&amp;_tags,_fs);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            e.timer((<span class="keywordtype">float</span>) ((cv::getTickCount()-roistimer)/freq), <span class="stringliteral">&quot;rois&quot;</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            tagstimer = cv::getTickCount();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// Tag computing</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">iteratorROI</a> it;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">for</span>(it=_rois.begin();it!=_rois.end();++it)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                TagType *t = <span class="keyword">new</span> TagType(*(*it));</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span>(t-&gt;checkTag(&amp;_rois,&amp;_tags,_fs)) _tags.push_back(t);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    <span class="keyword">delete</span> t;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            e.timer((<span class="keywordtype">float</span>) ((cv::getTickCount()-tagstimer)/freq), <span class="stringliteral">&quot;tags&quot;</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            e.timer((<span class="keywordtype">float</span>) ((cv::getTickCount()-globaltimer)/freq), <span class="stringliteral">&quot;global&quot;</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">  141</a></span>&#160;        <a class="code" href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">iteratorTag</a> <a class="code" href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">begin</a>()</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">return</span> _tags.begin();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">  152</a></span>&#160;        <a class="code" href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">iteratorTag</a> <a class="code" href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">end</a>()</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">return</span> _tags.end();</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a87198be3b48e6cd65439128fa11ab1f6">  160</a></span>&#160;        <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a> * <a class="code" href="classaram_1_1_tag_detector.html#a87198be3b48e6cd65439128fa11ab1f6">frameSet</a>()</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">return</span> _fs;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keyword">private</span> :</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ROIDetector _r; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a> *_fs; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> _rois; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="namespacearam.html#a1b463d4fe9fe532590831b7e2e753056">vecTag</a> _tags; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="classaram_1_1_exporter.html">Exporter</a> e;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    };</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;};</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="namespacearam_html_a1b463d4fe9fe532590831b7e2e753056"><div class="ttname"><a href="namespacearam.html#a1b463d4fe9fe532590831b7e2e753056">aram::vecTag</a></div><div class="ttdeci">std::vector&lt; ITag * &gt; vecTag</div><div class="ttdef"><b>Definition:</b> typedef.hpp:121</div></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">  111</a></span>&#160;        <a class="code" href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">iteratorTag</a> <a class="code" href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">begin</a>()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">return</span> m_tags.begin();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">  122</a></span>&#160;        <a class="code" href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">iteratorTag</a> <a class="code" href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">end</a>()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> m_tags.end();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#ab51e310136f216e42bcbc23345aef0fa">  132</a></span>&#160;        <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a> * <a class="code" href="classaram_1_1_tag_detector.html#ab51e310136f216e42bcbc23345aef0fa">frameSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span> p_fs;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a969a85f4267012b0f20c181125aad92a">  143</a></span>&#160;        <a class="code" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> * <a class="code" href="classaram_1_1_tag_detector.html#a969a85f4267012b0f20c181125aad92a">ROI</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">        </span>{</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">return</span> &amp;m_rois;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a658b4c01086d28096be1c1ff6171fb2e">  154</a></span>&#160;        <a class="code" href="namespacearam.html#aeafb22032d75c728c4c04b668365c38b">vecTag</a> * <a class="code" href="classaram_1_1_tag_detector.html#a658b4c01086d28096be1c1ff6171fb2e">tag</a>()</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">return</span> &amp;m_tags;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#ad4f35fce0199ad43db33e6f787c52514">  165</a></span>&#160;        <a class="code" href="classaram_1_1_i_r_o_i_detector.html">IROIDetector</a> *<a class="code" href="classaram_1_1_tag_detector.html#ad4f35fce0199ad43db33e6f787c52514">detector</a>()</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">return</span> p_roiDetect;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        }</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="classaram_1_1_tag_detector.html#a899946a19b8017f6fa476614514bfd0a">  176</a></span>&#160;        <a class="code" href="classaram_1_1_i_tag_matcher.html">ITagMatcher</a> *<a class="code" href="classaram_1_1_tag_detector.html#a899946a19b8017f6fa476614514bfd0a">sampler</a>()</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordflow">return</span> p_tagMatch;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        ROIDetector *p_roiDetect; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        TagType *p_tagMatch;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classaram_1_1_frame_set.html">FrameSet</a> *p_fs; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">vecROI</a> m_rois; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="namespacearam.html#aeafb22032d75c728c4c04b668365c38b">vecTag</a> m_tags; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    };</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="_frame_set_8hpp_html"><div class="ttname"><a href="_frame_set_8hpp.html">FrameSet.hpp</a></div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a899946a19b8017f6fa476614514bfd0a"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a899946a19b8017f6fa476614514bfd0a">aram::TagDetector::sampler</a></div><div class="ttdeci">ITagMatcher * sampler()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:176</div></div>
 <div class="ttc" id="classaram_1_1_frame_set_html"><div class="ttname"><a href="classaram_1_1_frame_set.html">aram::FrameSet</a></div><div class="ttdef"><b>Definition:</b> FrameSet.hpp:62</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_a149dde3005adb302ee22b8d15ab16080"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">aram::TagDetector::end</a></div><div class="ttdeci">iteratorTag end()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:152</div></div>
-<div class="ttc" id="namespacearam_html_a96433fb89f254570ddab504e6de2322d"><div class="ttname"><a href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">aram::iteratorTag</a></div><div class="ttdeci">vecTag::iterator iteratorTag</div><div class="ttdef"><b>Definition:</b> typedef.hpp:126</div></div>
-<div class="ttc" id="namespacearam_html_a4708aa025d770bf51f08f2883bad3cba"><div class="ttname"><a href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">aram::iteratorROI</a></div><div class="ttdeci">vecROI::iterator iteratorROI</div><div class="ttdef"><b>Definition:</b> typedef.hpp:136</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_aed8553343f910d510ae7351f9312e880"><div class="ttname"><a href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">aram::TagDetector::TagDetector</a></div><div class="ttdeci">TagDetector()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:51</div></div>
-<div class="ttc" id="namespacearam_html_a43f7527aaa6c641aba08227198b5c9f4"><div class="ttname"><a href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">aram::vecROI</a></div><div class="ttdeci">std::vector&lt; ROI * &gt; vecROI</div><div class="ttdef"><b>Definition:</b> typedef.hpp:131</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html"><div class="ttname"><a href="classaram_1_1_tag_detector.html">aram::TagDetector</a></div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:43</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a149dde3005adb302ee22b8d15ab16080"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080">aram::TagDetector::end</a></div><div class="ttdeci">iteratorTag end()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:122</div></div>
+<div class="ttc" id="namespacearam_html_a96433fb89f254570ddab504e6de2322d"><div class="ttname"><a href="namespacearam.html#a96433fb89f254570ddab504e6de2322d">aram::iteratorTag</a></div><div class="ttdeci">vecTag::iterator iteratorTag</div><div class="ttdef"><b>Definition:</b> typedef.hpp:147</div></div>
+<div class="ttc" id="namespacearam_html_a4708aa025d770bf51f08f2883bad3cba"><div class="ttname"><a href="namespacearam.html#a4708aa025d770bf51f08f2883bad3cba">aram::iteratorROI</a></div><div class="ttdeci">vecROI::iterator iteratorROI</div><div class="ttdef"><b>Definition:</b> typedef.hpp:157</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_aed8553343f910d510ae7351f9312e880"><div class="ttname"><a href="classaram_1_1_tag_detector.html#aed8553343f910d510ae7351f9312e880">aram::TagDetector::TagDetector</a></div><div class="ttdeci">TagDetector()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:37</div></div>
+<div class="ttc" id="namespacearam_html_a43f7527aaa6c641aba08227198b5c9f4"><div class="ttname"><a href="namespacearam.html#a43f7527aaa6c641aba08227198b5c9f4">aram::vecROI</a></div><div class="ttdeci">std::vector&lt; ROI * &gt; vecROI</div><div class="ttdef"><b>Definition:</b> typedef.hpp:152</div></div>
+<div class="ttc" id="_i_tag_matcher_8hpp_html"><div class="ttname"><a href="_i_tag_matcher_8hpp.html">ITagMatcher.hpp</a></div><div class="ttdoc">Interface for tag, determine if potential tag is or not a tag. </div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html"><div class="ttname"><a href="classaram_1_1_tag_detector.html">aram::TagDetector</a></div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:29</div></div>
 <div class="ttc" id="typedef_8hpp_html"><div class="ttname"><a href="typedef_8hpp.html">typedef.hpp</a></div><div class="ttdoc">macro export definition </div></div>
 <div class="ttc" id="export_8hpp_html"><div class="ttname"><a href="export_8hpp.html">export.hpp</a></div><div class="ttdoc">macro export definition </div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_ab51e310136f216e42bcbc23345aef0fa"><div class="ttname"><a href="classaram_1_1_tag_detector.html#ab51e310136f216e42bcbc23345aef0fa">aram::TagDetector::frameSet</a></div><div class="ttdeci">FrameSet * frameSet() const </div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:132</div></div>
 <div class="ttc" id="_a_r_a_m_exception_8hpp_html"><div class="ttname"><a href="_a_r_a_m_exception_8hpp.html">ARAMException.hpp</a></div><div class="ttdoc">ARAM&#39;s exceptions. </div></div>
-<div class="ttc" id="_i_tag_8hpp_html"><div class="ttname"><a href="_i_tag_8hpp.html">ITag.hpp</a></div><div class="ttdoc">Interface for tag, determine if potential tag is or not a tag. </div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_ad4f35fce0199ad43db33e6f787c52514"><div class="ttname"><a href="classaram_1_1_tag_detector.html#ad4f35fce0199ad43db33e6f787c52514">aram::TagDetector::detector</a></div><div class="ttdeci">IROIDetector * detector()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:165</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a969a85f4267012b0f20c181125aad92a"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a969a85f4267012b0f20c181125aad92a">aram::TagDetector::ROI</a></div><div class="ttdeci">vecROI * ROI() const </div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:143</div></div>
 <div class="ttc" id="_i_r_o_i_detector_8hpp_html"><div class="ttname"><a href="_i_r_o_i_detector_8hpp.html">IROIDetector.hpp</a></div><div class="ttdoc">Interface for region of interest detection. </div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_a971fdedf27db89b348e6edec9b76db5c"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">aram::TagDetector::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:72</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_ac404e4920bc9e835a82b042f7c442409"><div class="ttname"><a href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">aram::TagDetector::begin</a></div><div class="ttdeci">iteratorTag begin()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:141</div></div>
-<div class="ttc" id="_exporter_8hpp_html"><div class="ttname"><a href="_exporter_8hpp.html">Exporter.hpp</a></div><div class="ttdoc">Tools for info export. </div></div>
-<div class="ttc" id="classaram_1_1_exporter_html"><div class="ttname"><a href="classaram_1_1_exporter.html">aram::Exporter</a></div><div class="ttdef"><b>Definition:</b> Exporter.hpp:65</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_a00e558f2c169b24b6a83f0824b6a2763"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">aram::TagDetector::~TagDetector</a></div><div class="ttdeci">~TagDetector()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:63</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_aa0f8cb5c70638f9feb90eeb8cebf9bf5"><div class="ttname"><a href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">aram::TagDetector::detect</a></div><div class="ttdeci">void detect(const cv::Mat &amp;frame)</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:99</div></div>
-<div class="ttc" id="classaram_1_1_tag_detector_html_a87198be3b48e6cd65439128fa11ab1f6"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a87198be3b48e6cd65439128fa11ab1f6">aram::TagDetector::frameSet</a></div><div class="ttdeci">FrameSet * frameSet()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:160</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a971fdedf27db89b348e6edec9b76db5c"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a971fdedf27db89b348e6edec9b76db5c">aram::TagDetector::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:62</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_ac404e4920bc9e835a82b042f7c442409"><div class="ttname"><a href="classaram_1_1_tag_detector.html#ac404e4920bc9e835a82b042f7c442409">aram::TagDetector::begin</a></div><div class="ttdeci">iteratorTag begin()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:111</div></div>
+<div class="ttc" id="classaram_1_1_i_tag_matcher_html"><div class="ttname"><a href="classaram_1_1_i_tag_matcher.html">aram::ITagMatcher</a></div><div class="ttdef"><b>Definition:</b> ITagMatcher.hpp:64</div></div>
+<div class="ttc" id="namespacearam_html_aeafb22032d75c728c4c04b668365c38b"><div class="ttname"><a href="namespacearam.html#aeafb22032d75c728c4c04b668365c38b">aram::vecTag</a></div><div class="ttdeci">std::vector&lt; ROI * &gt; vecTag</div><div class="ttdef"><b>Definition:</b> typedef.hpp:142</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a00e558f2c169b24b6a83f0824b6a2763"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763">aram::TagDetector::~TagDetector</a></div><div class="ttdeci">~TagDetector()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:50</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_aa0f8cb5c70638f9feb90eeb8cebf9bf5"><div class="ttname"><a href="classaram_1_1_tag_detector.html#aa0f8cb5c70638f9feb90eeb8cebf9bf5">aram::TagDetector::detect</a></div><div class="ttdeci">void detect(const cv::Mat &amp;frame)</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:86</div></div>
+<div class="ttc" id="classaram_1_1_i_r_o_i_detector_html"><div class="ttname"><a href="classaram_1_1_i_r_o_i_detector.html">aram::IROIDetector</a></div><div class="ttdef"><b>Definition:</b> IROIDetector.hpp:61</div></div>
+<div class="ttc" id="classaram_1_1_tag_detector_html_a658b4c01086d28096be1c1ff6171fb2e"><div class="ttname"><a href="classaram_1_1_tag_detector.html#a658b4c01086d28096be1c1ff6171fb2e">aram::TagDetector::tag</a></div><div class="ttdeci">vecTag * tag()</div><div class="ttdef"><b>Definition:</b> TagDetector.hpp:154</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:17 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

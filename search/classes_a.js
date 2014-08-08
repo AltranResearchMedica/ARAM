@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['standardtag',['StandardTag',['../classaram_1_1_standard_tag.html',1,'aram']]]
+  ['otsucannyfittingdetector',['OtsuCannyFittingDetector',['../classaram_1_1_otsu_canny_fitting_detector.html',1,'aram']]],
+  ['otsutagmatcher',['OtsuTagMatcher',['../classaram_1_1_otsu_tag_matcher.html',1,'aram']]]
 ];

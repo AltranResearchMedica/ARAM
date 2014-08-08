@@ -1,15 +1,7 @@
 var searchData=
 [
-  ['edgedetector',['EdgeDetector',['../classaram_1_1_edge_detector.html',1,'aram']]],
-  ['edgedetector_2ehpp',['EdgeDetector.hpp',['../_edge_detector_8hpp.html',1,'']]],
-  ['end',['end',['../classaram_1_1_tag_detector.html#a149dde3005adb302ee22b8d15ab16080',1,'aram::TagDetector']]],
-  ['error',['error',['../classaram_1_1_exporter.html#a26c8c0fc27cd5041245ebd82e205c56d',1,'aram::Exporter::error(float, const std::string &amp;)'],['../classaram_1_1_exporter.html#a9036fd8c902115fe94a7ef7ed55cd061',1,'aram::Exporter::error(float, float, float, float, const std::string &amp;)']]],
-  ['exist',['exist',['../classaram_1_1_frame_set.html#a862a68e910539d6251c0e81155b996da',1,'aram::FrameSet']]],
-  ['export_2ehpp',['export.hpp',['../export_8hpp.html',1,'']]],
-  ['exporter',['Exporter',['../classaram_1_1_exporter.html',1,'aram']]],
-  ['exporter',['Exporter',['../classaram_1_1_exporter.html#a957dae6b793edfd4bd44b6a1b775b238',1,'aram::Exporter']]],
-  ['exporter_2ehpp',['Exporter.hpp',['../_exporter_8hpp.html',1,'']]],
-  ['extrinsics',['Extrinsics',['../classaram_1_1_extrinsics.html',1,'aram']]],
-  ['extrinsics',['Extrinsics',['../classaram_1_1_extrinsics.html#ae0800f6df8964e326b41de47675b0c5c',1,'aram::Extrinsics::Extrinsics(Intrinsics, vecPoint2D, vecPoint3D)'],['../classaram_1_1_extrinsics.html#a08394c85c94f7bc663f5dfa23401a473',1,'aram::Extrinsics::Extrinsics(Intrinsics, vecPoint2D, vecPoint3D, float &amp;)'],['../classaram_1_1_extrinsics.html#a1d0aebdd3c7285e1c8fadfb168432f7d',1,'aram::Extrinsics::Extrinsics(Intrinsics, cv::Mat &amp;, cv::Mat &amp;)'],['../classaram_1_1_hamming_tag.html#a8a1981f9ceb68c097e4edda2ee07989b',1,'aram::HammingTag::extrinsics()'],['../classaram_1_1_i_tag.html#af9b88f7bf56c56e61fa2c813e4cc18e4',1,'aram::ITag::extrinsics()'],['../classaram_1_1_standard_tag.html#aa47617c345b8a124bd839ebc99a02390',1,'aram::StandardTag::extrinsics()']]],
-  ['extrinsics_2ehpp',['Extrinsics.hpp',['../_extrinsics_8hpp.html',1,'']]]
+  ['findroi',['findROI',['../classaram_1_1_adaptive_thresh_detector.html#a9e9a027348f08cd0131cac157fe356c5',1,'aram::AdaptiveThreshDetector::findROI()'],['../classaram_1_1_auto_canny_detector.html#ae6e4b6d4ff8169d3c6bff06b85489665',1,'aram::AutoCannyDetector::findROI()'],['../classaram_1_1_canny_fitting_detector.html#a2d5d0df9a97b21220ab8a56c7e3a42be',1,'aram::CannyFittingDetector::findROI()'],['../classaram_1_1_i_r_o_i_detector.html#a48f2e265484e0874441e3187aa036fd5',1,'aram::IROIDetector::findROI()'],['../classaram_1_1_otsu_canny_fitting_detector.html#a8d9a8408ebe397aad85e4ec977c3281c',1,'aram::OtsuCannyFittingDetector::findROI()']]],
+  ['frameset',['frameSet',['../classaram_1_1_tag_detector.html#ab51e310136f216e42bcbc23345aef0fa',1,'aram::TagDetector']]],
+  ['frameset',['FrameSet',['../classaram_1_1_frame_set.html',1,'aram']]],
+  ['frameset_2ehpp',['FrameSet.hpp',['../_frame_set_8hpp.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>ARAM: C:/Tracking/ARAM/include/ARAM/coordinate/ICoordinate.hpp File Reference</title>
+<title>ARAM: include/ARAM/coordinate/ICoordinate.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_eb6935ee1c183a69f74c38b3cbcda078.html">Tracking</a></li><li class="navelem"><a class="el" href="dir_e8a34f451738af8deac86e38875c72f7.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_c14f76c45fd99d52f0a4701c948ec2e6.html">coordinate</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_c14f76c45fd99d52f0a4701c948ec2e6.html">coordinate</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,9 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="export_8hpp_source.html">ARAM/export.hpp</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="typedef_8hpp_source.html">ARAM/typedef.hpp</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="_extrinsics_8hpp_source.html">ARAM/tools/Extrinsics.hpp</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="_i_tag_8hpp_source.html">ARAM/tag/ITag.hpp</a>&gt;</code><br/>
-<code>#include &lt;opencv2/opencv.hpp&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_extrinsic_8hpp_source.html">ARAM/tools/Extrinsic.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="_i_tag_matcher_8hpp_source.html">ARAM/tag/ITagMatcher.hpp</a>&gt;</code><br/>
 </div>
 <p><a href="_i_coordinate_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -115,7 +116,7 @@ Namespaces</h2></td></tr>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:17 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

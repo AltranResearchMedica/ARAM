@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,13 +95,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a691496073cb261d0d3c7942021aaf640">corners</a>(const vecPoint2D &amp;)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a568837bd09f91c12fb829136a4fd38a9">corners</a>(const Point2D &amp;)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a62553ebc26892349f8267f5ed023bea4">corners</a>() const </td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a6c99e163de18ee2e9cc196331e31cb67">corners</a>(const vecPoint2D &amp;pts)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a00ca3d32ad81e19213684a1539e9fef0">corners</a>(const Point2D &amp;pt)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#ae347b8bbdf0481d2b99e2aef57c6902a">corners</a>()</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#ab19ab037e8b63634863198fc69f54863">extrinsic</a>(const Intrinsic &amp;intr, float size)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a17531f93e27064d01631e757adb05ba0">id</a>() const </td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a970b0f036edc23ff55ceab6c186dcab0">id</a>(int i)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#aa21cd2aca3480c4a4612854161d7dfda">ROI</a>()</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html#a81a5819c92f4b2afc1b3f97cfc9a1dec">rotate</a>(int n)</td><td class="entry"><a class="el" href="classaram_1_1_r_o_i.html">aram::ROI</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:18 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>ARAM: C:/Tracking/ARAM/include/ARAM/ROIDetector/ROI.hpp Source File</title>
+<title>ARAM: include/ARAM/ROIDetector/ROI.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,6 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ARAM
+   &#160;<span id="projectnumber">2.2</span>
    </div>
   </td>
  </tr>
@@ -37,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_eb6935ee1c183a69f74c38b3cbcda078.html">Tracking</a></li><li class="navelem"><a class="el" href="dir_e8a34f451738af8deac86e38875c72f7.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_193ca2c0b9664f1d9b969bf0d2258089.html">ROIDetector</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d0b9a9b35c7315984cfb43c311d4e1e1.html">include</a></li><li class="navelem"><a class="el" href="dir_244bc30b8c8f34e05eb983e3ca39f248.html">ARAM</a></li><li class="navelem"><a class="el" href="dir_193ca2c0b9664f1d9b969bf0d2258089.html">ROIDetector</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -124,47 +126,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef _ROI_HPP_</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define _ROI_HPP_</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//std include</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//ARAM include</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="export_8hpp.html">ARAM/export.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="typedef_8hpp.html">ARAM/typedef.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_a_r_a_m_exception_8hpp.html">ARAM/ARAMException.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//ARAM include</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="export_8hpp.html">ARAM/export.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="typedef_8hpp.html">ARAM/typedef.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_a_r_a_m_exception_8hpp.html">ARAM/ARAMException.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_extrinsic_8hpp.html">ARAM/tools/Extrinsic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//openCV include</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;opencv2/core/core.hpp&gt;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">namespace </span>aram</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classaram_1_1_r_o_i.html">   64</a></span>&#160;    <span class="keyword">class </span>ARAM_EXPORT <a class="code" href="classaram_1_1_r_o_i.html">ROI</a></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">public</span> :</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> corners(<span class="keyword">const</span> <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> &amp;);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> corners(<span class="keyword">const</span> <a class="code" href="namespacearam.html#a2e4bfd20bae93a86b2164f2c4fa94901">Point2D</a> &amp;);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> corners() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">private</span> :</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> _corners; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classaram_1_1_r_o_i_html"><div class="ttname"><a href="classaram_1_1_r_o_i.html">aram::ROI</a></div><div class="ttdef"><b>Definition:</b> ROI.hpp:64</div></div>
-<div class="ttc" id="namespacearam_html_a2e4bfd20bae93a86b2164f2c4fa94901"><div class="ttname"><a href="namespacearam.html#a2e4bfd20bae93a86b2164f2c4fa94901">aram::Point2D</a></div><div class="ttdeci">cv::Point2f Point2D</div><div class="ttdef"><b>Definition:</b> typedef.hpp:101</div></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span>aram</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classaram_1_1_r_o_i.html">   61</a></span>&#160;    <span class="keyword">class </span>ARAM_EXPORT <a class="code" href="classaram_1_1_r_o_i.html">ROI</a></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classaram_1_1_r_o_i.html">ROI</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> corners(<span class="keyword">const</span> <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> &amp;pts);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> corners(<span class="keyword">const</span> <a class="code" href="namespacearam.html#a2e4bfd20bae93a86b2164f2c4fa94901">Point2D</a> &amp;pt);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> &amp; corners();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> rotate(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="classaram_1_1_extrinsic.html">Extrinsic</a> extrinsic(<span class="keyword">const</span> <a class="code" href="classaram_1_1_intrinsic.html">Intrinsic</a> &amp;intr, <span class="keywordtype">float</span> size);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> id() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordtype">void</span> id(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">vecPoint2D</a> m_corners; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordtype">int</span> m_id; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    };</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classaram_1_1_r_o_i_html"><div class="ttname"><a href="classaram_1_1_r_o_i.html">aram::ROI</a></div><div class="ttdef"><b>Definition:</b> ROI.hpp:61</div></div>
+<div class="ttc" id="namespacearam_html_a2e4bfd20bae93a86b2164f2c4fa94901"><div class="ttname"><a href="namespacearam.html#a2e4bfd20bae93a86b2164f2c4fa94901">aram::Point2D</a></div><div class="ttdeci">cv::Point2f Point2D</div><div class="ttdef"><b>Definition:</b> typedef.hpp:122</div></div>
+<div class="ttc" id="classaram_1_1_intrinsic_html"><div class="ttname"><a href="classaram_1_1_intrinsic.html">aram::Intrinsic</a></div><div class="ttdef"><b>Definition:</b> Intrinsic.hpp:57</div></div>
 <div class="ttc" id="typedef_8hpp_html"><div class="ttname"><a href="typedef_8hpp.html">typedef.hpp</a></div><div class="ttdoc">macro export definition </div></div>
-<div class="ttc" id="namespacearam_html_a85ddb5eb807559bc406a28829944ec48"><div class="ttname"><a href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">aram::vecPoint2D</a></div><div class="ttdeci">std::vector&lt; Point2D &gt; vecPoint2D</div><div class="ttdef"><b>Definition:</b> typedef.hpp:106</div></div>
+<div class="ttc" id="namespacearam_html_a85ddb5eb807559bc406a28829944ec48"><div class="ttname"><a href="namespacearam.html#a85ddb5eb807559bc406a28829944ec48">aram::vecPoint2D</a></div><div class="ttdeci">std::vector&lt; Point2D &gt; vecPoint2D</div><div class="ttdef"><b>Definition:</b> typedef.hpp:127</div></div>
 <div class="ttc" id="export_8hpp_html"><div class="ttname"><a href="export_8hpp.html">export.hpp</a></div><div class="ttdoc">macro export definition </div></div>
+<div class="ttc" id="classaram_1_1_extrinsic_html"><div class="ttname"><a href="classaram_1_1_extrinsic.html">aram::Extrinsic</a></div><div class="ttdef"><b>Definition:</b> Extrinsic.hpp:62</div></div>
 <div class="ttc" id="_a_r_a_m_exception_8hpp_html"><div class="ttname"><a href="_a_r_a_m_exception_8hpp.html">ARAMException.hpp</a></div><div class="ttdoc">ARAM&#39;s exceptions. </div></div>
+<div class="ttc" id="_extrinsic_8hpp_html"><div class="ttname"><a href="_extrinsic_8hpp.html">Extrinsic.hpp</a></div><div class="ttdoc">Contains rotation matrix and translation vector. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Apr 30 2014 09:38:38 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 8 2014 15:55:17 for ARAM by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

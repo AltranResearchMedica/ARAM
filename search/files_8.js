@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['standardtag_2ehpp',['StandardTag.hpp',['../_standard_tag_8hpp.html',1,'']]]
+  ['milgramcontourclosing_2ehpp',['MilgramContourClosing.hpp',['../_milgram_contour_closing_8hpp.html',1,'']]],
+  ['multitag_2ehpp',['MultiTag.hpp',['../_multi_tag_8hpp.html',1,'']]]
 ];

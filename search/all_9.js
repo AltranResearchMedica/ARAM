@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['icoordinate',['ICoordinate',['../classaram_1_1_i_coordinate.html',1,'aram']]],
-  ['icoordinate_2ehpp',['ICoordinate.hpp',['../_i_coordinate_8hpp.html',1,'']]],
-  ['id',['id',['../structaram_1_1_tag_info.html#aac4e75bf23fb226d922fd1bebbfec148',1,'aram::TagInfo::id()'],['../classaram_1_1_hamming_tag.html#a69c89a0d84c8db887417b48fdb6ab53b',1,'aram::HammingTag::id()'],['../classaram_1_1_i_tag.html#a7dbc5461ef839e3c6b448d035abcdb14',1,'aram::ITag::id()'],['../classaram_1_1_standard_tag.html#a691102540d1d653a31b155fe72bb8027',1,'aram::StandardTag::id()']]],
-  ['imgpoints',['imgPoints',['../classaram_1_1_extrinsics.html#a151e2a52da35b266b5bc7d41b3c2c6d7',1,'aram::Extrinsics']]],
-  ['intrinsics',['Intrinsics',['../classaram_1_1_intrinsics.html',1,'aram']]],
-  ['intrinsics',['Intrinsics',['../classaram_1_1_intrinsics.html#a879ab458b7c1c256e1abf00c562250e8',1,'aram::Intrinsics']]],
-  ['intrinsics_2ehpp',['Intrinsics.hpp',['../_intrinsics_8hpp.html',1,'']]],
-  ['iroidetector',['IROIDetector',['../classaram_1_1_i_r_o_i_detector.html',1,'aram']]],
-  ['iroidetector_2ehpp',['IROIDetector.hpp',['../_i_r_o_i_detector_8hpp.html',1,'']]],
-  ['itag',['ITag',['../classaram_1_1_i_tag.html#a0a2577eb6d9eb483259dd57f871b5ec5',1,'aram::ITag']]],
-  ['itag',['ITag',['../classaram_1_1_i_tag.html',1,'aram']]],
-  ['itag_2ehpp',['ITag.hpp',['../_i_tag_8hpp.html',1,'']]],
-  ['iteratorpoint2d',['iteratorPoint2D',['../namespacearam.html#aa54cf469919db62520293a9146464fdd',1,'aram']]],
-  ['iteratorpoint3d',['iteratorPoint3D',['../namespacearam.html#a49fc755d67f5a036e9ac9a525b2e413a',1,'aram']]],
-  ['iteratorroi',['iteratorROI',['../namespacearam.html#a4708aa025d770bf51f08f2883bad3cba',1,'aram']]],
-  ['iteratortag',['iteratorTag',['../namespacearam.html#a96433fb89f254570ddab504e6de2322d',1,'aram']]]
+  ['line',['Line',['../namespacearam.html#a4665c4d45fe788913fe7240a6c781da4',1,'aram']]],
+  ['load',['load',['../classaram_1_1_frame_set.html#af3c4595b4d0461f9ea3ae73049f29a82',1,'aram::FrameSet::load()'],['../classaram_1_1_i_r_o_i_detector.html#ae05c856ff203c4a7ea14c7e9a47f45f7',1,'aram::IROIDetector::load()'],['../classaram_1_1_i_tag_matcher.html#a40e7512be436e62e162af985ab9decd3',1,'aram::ITagMatcher::load()'],['../classaram_1_1_intrinsic.html#ac939fa1f41ffb15319edb42f41774f9a',1,'aram::Intrinsic::load()']]],
+  ['localthreshtagmatcher',['LocalThreshTagMatcher',['../classaram_1_1_local_thresh_tag_matcher.html#a913fe1d33f337a57f4ee44ce654a44f3',1,'aram::LocalThreshTagMatcher']]],
+  ['localthreshtagmatcher',['LocalThreshTagMatcher',['../classaram_1_1_local_thresh_tag_matcher.html',1,'aram']]],
+  ['localthreshtagmatcher_2ehpp',['LocalThreshTagMatcher.hpp',['../_local_thresh_tag_matcher_8hpp.html',1,'']]],
+  ['lowthreshold',['lowThreshold',['../classaram_1_1_auto_canny_detector.html#a7ecec71f216794af8ceaac58f604090b',1,'aram::AutoCannyDetector::lowThreshold() const '],['../classaram_1_1_auto_canny_detector.html#aa95610c45230a6d648e488c952ea2110',1,'aram::AutoCannyDetector::lowThreshold(int lT)'],['../classaram_1_1_canny_fitting_detector.html#aa7d0569b61de2643bb7a6f82b9e8668a',1,'aram::CannyFittingDetector::lowThreshold() const '],['../classaram_1_1_canny_fitting_detector.html#a4dc70de0c1990f026a97557a84fc0e2c',1,'aram::CannyFittingDetector::lowThreshold(int lT)']]]
 ];

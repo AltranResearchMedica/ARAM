@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7etagdetector',['~TagDetector',['../classaram_1_1_tag_detector.html#a00e558f2c169b24b6a83f0824b6a2763',1,'aram::TagDetector']]]
+  ['what',['what',['../classaram_1_1_a_r_a_m_exception.html#ac037e4284ce0b014a247e6f91547413c',1,'aram::ARAMException']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binarytree_2ehpp',['BinaryTree.hpp',['../_binary_tree_8hpp.html',1,'']]]
+  ['binarytreetagmatcher_2ehpp',['BinaryTreeTagMatcher.hpp',['../_binary_tree_tag_matcher_8hpp.html',1,'']]]
 ];
