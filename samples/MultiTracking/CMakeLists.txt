@@ -4,8 +4,10 @@ project(MultiTracking)
 set(EXECUTABLE_OUTPUT_PATH bin)
 
 # ARAM include
-include_directories("C:/Tracking/ARAM/include")
-link_directories("C:/Tracking/ARAM/build/lib/Debug")
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../cmake)
+set(ARAM_DIR CACHE PATH "ARAM install path")
+find_package(ARAM REQUIRED)
+include_directories(${ARAM_INCLUDE_DIR})
 
 # OpenCV include
 find_package(OpenCV REQUIRED)
@@ -18,5 +20,4 @@ add_executable(${CMAKE_PROJECT_NAME} ${source_files})
 
 
 # linker
-target_link_libraries(${CMAKE_PROJECT_NAME} ARAM)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${CMAKE_PROJECT_NAME} ${ARAM_LIBRARY} ${OpenCV_LIBS})
