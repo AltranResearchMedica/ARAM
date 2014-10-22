@@ -16,3 +16,9 @@ add_library(${CMAKE_PROJECT_NAME} SHARED ${source_files})
 
 # linker
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
+
+# make install
+install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin
+                                      LIBRARY DESTINATION lib
+                                      ARCHIVE DESTINATION lib)
+install(DIRECTORY include/ DESTINATION include)
