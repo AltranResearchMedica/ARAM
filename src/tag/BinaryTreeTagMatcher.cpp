@@ -51,7 +51,7 @@ namespace aram
 		
 
 		//try to find if this tag is in our dictonnary
-		TagDictionnary &td = TagDictionnary::getInstance();
+		TagDictionnary *td = TagDictionnary::getInstance();
 
 		bool res = false;
 		int nrot = 0;
@@ -60,7 +60,7 @@ namespace aram
 		while(!res&&nrot<4)
 		{
 			rotate(bits, bits);
-			res = td.binaryTreeSearch(bits);
+			res = td->binaryTreeSearch(bits);
 			nrot++;
 		}
 

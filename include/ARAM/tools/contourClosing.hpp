@@ -57,10 +57,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace aram
 {
+	/**
+	* Closure type
+	*/
 	typedef enum
 	{
-		ARAM_NAIVE,
-		ARAM_MilgramContourClosing,
+		ARAM_NAIVE, /**< Naive method */
+		ARAM_MilgramContourClosing, /**< Milgram's papaer based method */
 	} CLOSURE_TYPE;
 
 	void close(cv::Mat &toClose, CLOSURE_TYPE type);

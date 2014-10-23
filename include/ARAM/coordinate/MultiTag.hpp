@@ -78,10 +78,10 @@ namespace aram
 	};
 
 
-	/*
+	/**
 	* Compute extrinsics parameters using a grid of tags
 	* This method is efficient to deal with occlusion problems.
-	By using tags with kowned positions in real world coordinates, you can compute other tags position by knowing only one of them, and then compute camera pose.
+	* By using tags with kowned positions in real world coordinates, you can compute other tags position by knowing only one of them, and then compute camera pose.
 	*/
 	class ARAM_EXPORT MultiTag : public ICoordinate
 	{

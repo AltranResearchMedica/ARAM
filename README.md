@@ -21,8 +21,6 @@ The processing steps of AR marker detection procedure can be summarized as follo
 -	Image Sampling
 -	Pose estimation using the calibration parameters.
 
-![Mono tracking example](https://raw.githubusercontent.com/AltranResearchMedica/ARAM/master/samples/capture/AR_0.png)
-![Mono tracking example](https://raw.githubusercontent.com/AltranResearchMedica/ARAM/master/samples/capture/AR_1.png)
 
 # Main class
 

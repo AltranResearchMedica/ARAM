@@ -61,7 +61,7 @@ namespace aram
 {
 
 	/** 
-	* Detection of ROI based on lien fitting.
+	* Detect a potential tag (ROI), based on line fitting algorithm
 	*/
 	class ARAM_EXPORT CannyFittingDetector : public IROIDetector
 	{

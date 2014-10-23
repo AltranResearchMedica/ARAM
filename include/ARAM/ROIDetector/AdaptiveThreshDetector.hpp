@@ -40,7 +40,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 * \version 1.0
 * \date 13 mars 2014
 *
-* Detect a potential tag, based on an edge finding algorithm
+* Detection of ROI based on edge finding, using Canny operator to detect contour. The same detector can be used with threshold operation to detect contour. Threshold is faster, but isn't robust against illumination issues.
 *
 */
 
@@ -57,7 +57,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace aram
 {
 	/** 
-	* Detection of ROI based on edge finding, using Canny operator to detect contour. The same detector can be used with threshold operation to detect contour. Threshold is faster, but isn't robust against  issues.
+	* Detection of ROI based on edge finding, using Canny operator to detect contour. The same detector can be used with threshold operation to detect contour. Threshold is faster, but isn't robust against illumination issues.
 	*/
 	class ARAM_EXPORT AdaptiveThreshDetector : public IROIDetector
 	{

@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<opencv_storage>
+<tag0 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 1 1 1 0 1 1 1 0 0 0 0 0 0 0 0
+    1 0 0 0 0 0 0 0 1 1 0 0 1 1 0 1 0 0 0 0 0 1 1 1 1 0 1 1 0 0 1 1 1 0
+    0 0 1 0 0 0 0 0 0 0 0 0 0</data></tag0>
+<tag1 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1
+    1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 1 1 0 0 1 1 0 0
+    1 0 0 0 0 0 0 0 0 0 0 0 0</data></tag1>
+<tag2 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0 1 1 0 1 0 0 1 1 0 0 1 0
+    0 0 0 1 1 0 0 1 1 1 0 0 1 0 0 0 1 0 1 0 0 1 0 0 1 1 1 0 0 0 0 0 1 0
+    0 0 1 0 0 0 0 0 0 0 0 0 0</data></tag2>
+<tag3 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 1 0 1 1 0 1 0 0 0 1 1 1 0 1
+    0 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 1
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag3>
+<tag4 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 0 0 1 0 1
+    0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 1 1 1 1 1 1 0 0 1 0 0 1
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag4>
+<tag5 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 1 1 1 1 0 1
+    1 0 0 0 1 0 0 0 1 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 1 0 1
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag5>
+<tag6 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 1 0 0 1 0 1 1 0 0 1 0 0 0 0 1 1 1 0
+    0 0 0 0 0 1 1 0 1 1 0 0 1 0 0 1 0 1 1 0 0 0 1 0 0 1 1 0 0 0 1 1 0 0
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag6>
+<tag7 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1 1 1 0 0 1 0 0 1 0 0 0 1 0
+    0 0 0 0 1 1 1 1 1 1 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag7>
+<tag8 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 1 0 0 0
+    1 0 0 0 0 0 0 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 1 1 0 0 1 0 0 0 1 1 0 1
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag8>
+<tag9 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 1 1 1 0 1 1
+    1 0 0 0 1 1 1 0 1 1 0 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag9>
+<tag10 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 0 1
+    1 0 0 1 1 0 1 1 0 1 0 0 1 0 1 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag10>
+<tag11 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 0 0 0 1 1 0 1 0 1 1 0 0 0 1 1 0 0 0
+    0 0 0 1 1 1 1 0 0 1 0 0 0 0 1 0 1 1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 1 0
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag11>
+<tag12 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 1 1 1 1 0 1
+    0 0 0 1 0 1 1 1 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 1 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag12>
+<tag13 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 1 1 1
+    1 0 0 1 0 1 0 1 1 1 0 0 1 1 0 0 0 0 0 0 0 1 0 1 0 1 1 1 0 0 0 1 1 1
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag13>
+<tag14 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 1 1 0 1 0 0 0 0 1 1 0 0 1
+    0 0 0 1 0 1 1 0 1 1 0 0 0 0 0 1 1 1 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0
+    0 0 1 0 0 0 0 0 0 0 0 0 0</data></tag14>
+<tag15 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 1 1 0 0 0 0 0 0 1 0 0 1 1
+    1 0 0 1 1 0 1 1 1 1 0 0 1 1 1 1 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 1
+    1 0 0 0 0 0 0 0 0 0 0 0 0</data></tag15>
+<tag16 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0 1 1 1
+    0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 1 1 1 1 0 1 0 0 0 1 1 0 1
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag16>
+<tag17 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 1 1 0 0 0 1
+    1 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 1
+    0 0 0 0 0 0 0 0 0 0 0 0 0</data></tag17>
+<tag18 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 1 1 1 1 0 0 0 0 0 1 1 0 0 1 1
+    0 0 0 0 1 0 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0
+    1 0 0 0 0 0 0 0 0 0 0 0 0</data></tag18>
+<tag19 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 1 1
+    0 0 0 0 1 1 1 0 1 1 0 0 0 1 0 1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 0 0 1 0
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag19>
+<tag20 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0
+    1 0 0 0 1 0 1 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 1
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag20>
+<tag21 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 1 1 1 0 0 0 1 0 1 1 1 0
+    1 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 0 0 1 1 1 0 1 1 1 0 0 1 0 1 0
+    0 0 1 0 0 0 0 0 0 0 0 0 0</data></tag21>
+<tag22 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 0 0 0
+    1 0 0 1 1 1 1 0 1 1 0 0 0 1 0 0 1 0 1 0 0 0 1 0 1 0 1 1 0 0 1 1 0 1
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag22>
+<tag23 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 1 0 1 0 1 1
+    0 0 0 1 0 1 0 1 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag23>
+<tag24 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 0 1 0 1 0 0 0 0 0 0 0 1 0 0
+    0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 1 1 1 1 0 0 1 1 0 1 0 1 1 0 0 0 1 0 0
+    0 0 0 0 0 0 0 0 0 0 0 0 0</data></tag24>
+<tag25 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 0 1 0 1 1 1 0 0 0 0 0 0 0 0 1 0
+    0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 1 1 1 1 0 0 1 0 0 1
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag25>
+<tag26 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 0 0 0 0 1
+    1 0 0 1 1 0 1 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 1 0 1 1
+    0 0 0 0 0 0 0 0 0 0 0 0 0</data></tag26>
+<tag27 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 1 1 1 1 0 0 1 0 0 0 0 0 1 0 0
+    0 0 0 1 1 1 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 1
+    0 0 1 0 0 0 0 0 0 0 0 0 0</data></tag27>
+<tag28 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 0 1 0 0 0 0
+    0 0 0 1 0 1 0 1 0 0 0 0 1 0 0 1 1 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag28>
+<tag29 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 1 0 0 1 1 1 1 1 0 1 0 0 0 1 1 0 1 0
+    0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 1 1 0 0 0 1 0 0 1 1 0 0
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag29>
+<tag30 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 1
+    0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1
+    0 1 0 0 0 0 0 0 0 0 0 0 0</data></tag30>
+<tag31 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 1 0 0
+    1 0 0 1 0 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag31>
+<tag32 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 1 0
+    1 0 0 0 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1 0 0 0 1 1 0 0 1 1 0 0
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag32>
+<tag33 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 1 1 1 0 0 1 1 0 0 0 1
+    0 0 0 1 0 1 0 0 1 1 0 0 0 0 1 0 0 1 1 0 0 1 1 0 1 1 0 0 0 0 0 1 1 0
+    0 0 0 0 0 0 0 0 0 0 0 0 0</data></tag33>
+<tag34 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 1 0 0 1 0 1 1 0 0 0 0 1 1 0 1
+    0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0 0 1 0 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag34>
+<tag35 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 1 1
+    0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0
+    1 0 0 0 0 0 0 0 0 0 0 0 0</data></tag35>
+<tag36 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 0 0 1
+    0 0 0 0 1 0 0 1 1 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag36>
+<tag37 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 1 0 0 0 1 1 0 1 0 0 0 0 1 1 0 1 0 0
+    1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1
+    0 1 0 0 0 0 0 0 0 0 0 0 0</data></tag37>
+<tag38 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 1 1 0 0 1 1 0 0 0 1 1 0 0 1
+    1 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 0 1 1 0 0 1 1 1 1 0 0 0 0 0 1 1 0 0
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag38>
+<tag39 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 0 0 0 1 0 1 0 1 1 0 0 0 1 0 0 1 1
+    1 0 0 1 1 1 1 1 1 1 0 0 0 1 0 0 1 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 1 0
+    1 0 0 0 0 0 0 0 0 0 0 0 0</data></tag39>
+<tag40 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 0 1
+    1 0 0 1 1 1 0 0 1 1 0 0 1 0 1 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag40>
+<tag41 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0 0 1 1 0 0 1 1
+    1 0 0 1 0 1 1 1 0 1 0 0 1 1 1 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 1 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag41>
+<tag42 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1
+    0 0 0 1 1 1 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 0 1 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag42>
+<tag43 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 1 1 0
+    0 0 0 0 1 1 0 1 1 0 0 0 0 1 1 1 0 1 1 0 0 1 0 0 1 1 1 0 0 0 0 1 0 1
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag43>
+<tag44 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 1 1 1 1 1 0 0 0 0 0 1 0 0 0 1
+    1 0 0 0 0 0 1 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 0
+    0 0 0 0 0 0 0 0 0 0 0 0 0</data></tag44>
+<tag45 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 1 1 1 1 1 0 0 1 1 0 0 0 1 1 0 0 1 0 0 0 1 0
+    1 0 0 0 1 1 1 1 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 1 1 1 1 0 0 0 1 1 0 0
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag45>
+<tag46 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 1
+    1 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 1 0 1 0 0 1 1 0 0 1 1 1 0 0 1 1 0 0
+    1 1 1 0 0 0 0 0 0 0 0 0 0</data></tag46>
+<tag47 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0
+    1 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0 0 1 0 1 1
+    1 0 1 0 0 0 0 0 0 0 0 0 0</data></tag47>
+<tag48 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 1 0 0 0 1 0 0 1 1 1 1 0 0 1 1 1 1 1 0
+    1 0 0 1 1 0 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0
+    0 1 1 0 0 0 0 0 0 0 0 0 0</data></tag48>
+<tag49 type_id="opencv-matrix">
+  <rows>9</rows>
+  <cols>9</cols>
+  <dt>u</dt>
+  <data>
+    0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 0
+    0 0 0 0 1 1 1 0 0 1 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1
+    1 1 0 0 0 0 0 0 0 0 0 0 0</data></tag49>
+<size>7</size>
+<border>1</border>
+<hamming>10</hamming>
+</opencv_storage>

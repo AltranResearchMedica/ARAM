@@ -62,7 +62,7 @@ namespace aram
 		}
 		
 		//try to find if this tag is in our dictonnary
-		TagDictionnary &bt = TagDictionnary::getInstance();
+		TagDictionnary *bt = TagDictionnary::getInstance();
 
 		int res = -1;
 		int nrot = 0;
@@ -71,7 +71,7 @@ namespace aram
 		while(res==-1&&nrot<4)
 		{
 			rotate(bits, bits);
-			res = bt.hammingSearch(bits,10);
+			res = bt->hammingSearch(bits);
 			nrot++;
 		}
 

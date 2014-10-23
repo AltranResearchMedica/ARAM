@@ -44,9 +44,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef _TAGDICTIONNARY_HPP_
 #define _TAGDICTIONNARY_HPP_
 
-//std include
-#include <bitset>
-
 //ARAM include
 #include <ARAM/export.hpp>
 #include <ARAM/typedef.hpp>
@@ -99,7 +96,7 @@ namespace aram
 		* \param int hamming distance tolerance
 		* \return tag id if found, -1 if not
 		*/
-		int hammingSearch(cv::Mat &, int);
+		int hammingSearch(cv::Mat &tag);
 		
 		
 		/**
@@ -107,7 +104,7 @@ namespace aram
 		*
 		* \return unique instance of TagDictionnary
 		*/
-		static TagDictionnary & getInstance();
+		static TagDictionnary * getInstance();
 
 	private :
 		/**
@@ -115,8 +112,7 @@ namespace aram
 		*
 		* \param[in] std::bitset<81> contains marker in linear form
 		*/
-		void insert(std::bitset<81>);
-
+		void insert(cv::Mat tag);
 		
 		/**
 		* Compute hamming distance between two bitset
@@ -125,18 +121,18 @@ namespace aram
 		* \param[in] std::bitset<81> b second bitset for comparaison
 		* \return int hamming distance beetween two bitset
 		*/
-		int hammingDistance(std::bitset<81>, std::bitset<81>);
+		int hammingDistance(cv::Mat m, cv::Mat n);
 
 		/**
 		* Build tree
 		*/
-		void read();
+		void read(std::string dictionnaryFileName);
 		
 		
 		/**
 		* Constructor
 		*/
-		TagDictionnary();
+		TagDictionnary(std::string dictionnaryFileName);
 
 
 		/**
@@ -151,10 +147,17 @@ namespace aram
 		TagDictionnary(const TagDictionnary&);
 
 	
-		static TagDictionnary s_instance; /**< unique instance of TagDictionnary */
+		static TagDictionnary *s_instance; /**< unique instance of TagDictionnary */
 
 		Node *p_root; /**< root node, for binary tree search */
-		std::vector< std::bitset<81> > m_sets; /**< bitsets storage, for hamming search */
+		std::vector< cv::Mat > m_sets; /**< data storage, for hamming search */
+
+		int m_hammingDistance;
+		int m_dictionnarySize;
+		
+		int m_tagSize;
+		int m_borderSize;
+
 	};
 };
 #endif
