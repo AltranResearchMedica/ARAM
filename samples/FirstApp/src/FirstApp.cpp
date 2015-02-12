@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 		myDetector *detector = new myDetector();
 		
 		// Intrinsics parameters
-		aram::Intrinsic intr("C:\\camera_data.xml");
+		aram::Intrinsic intr("camera_data.xml");
 		
 		// Video input (see openCV doc)
 		

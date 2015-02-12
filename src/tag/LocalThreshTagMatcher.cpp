@@ -4,6 +4,14 @@ namespace aram
 {
 	LocalThreshTagMatcher::LocalThreshTagMatcher(FrameSet *fs):ITagMatcher(fs),m_tagSize(9),m_scale(16)
 	{
+		m_dst.resize(4);
+		float s = (float)m_tagSize*m_scale;
+		m_dst[0] = Point2D(0.0, 0.0);
+		m_dst[1] = Point2D(0.0, s);
+		m_dst[2] = Point2D(s, s);
+		m_dst[3] = Point2D(s, 0.0);
+
+		m_bt = TagDictionnary::getInstance();
 	}
 
 	bool LocalThreshTagMatcher::checkTag(ROI* roi)
@@ -12,18 +20,7 @@ namespace aram
 
 		vecPoint2D src = roi->corners();
 
-		vecPoint2D dst;
-		dst.resize(4);
-
-		float s = (float) m_tagSize*m_scale;
-		dst[0] = Point2D(0.0, 0.0);
-		dst[1] = Point2D(0.0, s);
-		dst[2] = Point2D(s, s);
-		dst[3] = Point2D(s, 0.0);
-
-
-		cv::Mat pers = cv::getPerspectiveTransform(src, dst);
-		
+		cv::Mat pers = cv::getPerspectiveTransform(src, m_dst);		
 		cv::Mat currentFrame, out, otsu, gray;
 		currentFrame = load("currentFrame");
 
@@ -51,7 +48,6 @@ namespace aram
 		}
 
 		//try to find if this tag is in our dictonnary
-		TagDictionnary *bt = TagDictionnary::getInstance();
 
 		int res = -1;
 		int nrot = 0;
@@ -60,7 +56,7 @@ namespace aram
 		while(res==-1&&nrot<4)
 		{
 			rotate(bits, bits);
-			res = bt->hammingSearch(bits);
+			res = m_bt->hammingSearch(bits);
 			nrot++;
 		}
 

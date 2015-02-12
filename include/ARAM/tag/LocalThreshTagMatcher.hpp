@@ -82,6 +82,9 @@ namespace aram
 	private :
 		int m_tagSize; /**< tag size size in "bits number" (border include)*/
 		int m_scale; /**< value of perspective scale */
+
+		vecPoint2D m_dst; /**< Destination coordinates in 2D */
+		TagDictionnary *m_bt; /**< Tag dictionnary */
 	};
 };
 
