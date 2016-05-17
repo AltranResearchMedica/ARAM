@@ -31,7 +31,9 @@ namespace aram
 
 			currentFrame = load("currentFrame");
 			cv::cvtColor(currentFrame, grayscale,CV_BGR2GRAY);
-			cv::adaptiveThreshold(grayscale,binary,255.0,cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, blockSize+2, 0.5);
+
+			//cv::adaptiveThreshold(grayscale,binary,255.0,cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, blockSize+2, 0.5);
+			cv::threshold(grayscale, binary, 128, 255, 1);
 
 			save("thresh",binary);
 		}
