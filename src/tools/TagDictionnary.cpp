@@ -14,9 +14,9 @@ namespace aram
 		bool res = true;
 		Node *parentNode = p_root;
 
-		for (int row = 0; row<9 && res; ++row)
+		for (int row = 0; row<bits.rows && res; ++row)
 		{
-			for (int col = 0; col<9 && res; ++col)
+			for (int col = 0; col<bits.cols && res; ++col)
 			{
 				int v = bits.at<uchar>(row, col);
 				switch (v)
@@ -95,16 +95,16 @@ namespace aram
 		Node *parentNode = p_root;
 
 		std::bitset<81> bits;
-		for (int i = 0; i<9; ++i)
+		for (int i = 0; i<m.rows; ++i)
 		{
-			for (int j = 0; j<9; ++j)
+			for (int j = 0; j<m.cols; ++j)
 			{
-				if (m.at<uchar>(i, j) == 0) bits[i * 9 + j] = 0;
-				else bits[i * 9 + j] = 1;
+				if (m.at<uchar>(i, j) == 0) bits[i * m.rows + j] = 0;
+				else bits[i * m.rows + j] = 1;
 			}
 		}
 
-		for(int pos=0;pos<81;++pos)
+		for(int pos=0;pos<m.rows*m.cols;++pos)
 		{
 			int v = bits[pos];
 			
